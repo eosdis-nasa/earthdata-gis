@@ -1,0 +1,92 @@
+project:
+  type: website
+
+  resources:
+    - "CNAME"
+
+website:
+  page-navigation: true
+  title: "KLEB Documentation"
+  site-url: "https://docs.kleb.cloud
+  repo-url: https://github.com/eosdis-nasa/earthdata-gis
+  repo-actions: [edit, issue]
+
+  page-footer:
+    right: "This page is built with HTML Basic."
+    left: "&copy; CC-By NASA, 2025"
+
+  sidebar:
+    logo: "https://visex.netlify.app/graphics/nasa-veda-logo-pos.svg"
+    pinned: true
+    align: center
+    tools:
+      - icon: info-circle
+        href: https://www.earthdata.nasa.gov
+        text: "https://www.earthdata.nasa.gov/"
+      - icon: github
+        href: https://github.com/eosdis-nasa/earthdata-gis
+        text: "Repository home"
+    style: "docked"
+    search: true
+    collapse-level: 2
+    contents:
+      - href: index.html
+        text: Welcome
+      - text: "---"
+      - section: kleb-project/index.html
+        contents: 
+          - kleb-project/index.html
+          - section: How To Use This Resource
+            contents:
+            - kleb-project/index.html
+            - kleb-project/index.html
+            - kleb-project/index.html
+      - text: "---"
+      - section: EGIS Limitations 
+        contents:
+          - kleb-project/egis-limitations/index.html
+          - kleb-project/egis-limitations/index.html
+          - kleb-project/egis-limitations/index.html
+          - kleb-project/egis-limitations/index.html
+      - section: Services
+        contents:
+          - kleb-project/services/index.html
+          - kleb-project/services/index.html
+          - kleb-project/services/index.html
+          - kleb-project/services/index.html
+          - kleb-project/services/index.html
+      - section: Platform & Product Behavior
+        contents:
+          - kleb-project/behaviors/index.html
+          - kleb-project/behaviors/index.html
+          - kleb-project/behaviors/index.html
+          - kleb-project/behaviors/index.html
+          - kleb-project/behaviors/index.html
+      - section: Application Integrations & Tools
+        contents:
+          - kleb-project/tools/index.html
+          - kleb-project/tools/index.html
+          - kleb-project/tools/index.html
+          - kleb-project/tools/index.html
+          - kleb-project/tools/index.html
+      - section: Data Standards & Managements
+        contents:
+          - kleb-project/standards/index.html
+      - section: Resources
+        contents:
+          - kleb-project/resources/index.html
+          - kleb-project/resources/index.html
+          - kleb-project/resources/index.html
+format:
+  html:
+    theme:
+      light: [cosmo]
+      dark: [cosmo, theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    include-in-header:
+      - text: |
+          <script defer data-domain="eosdis-nasa.github.io/earthdata-gis" src="https://plausible.io/js/script.js"></script>
