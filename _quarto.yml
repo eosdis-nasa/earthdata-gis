@@ -9,4 +9,3 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-  theme: "jekyll-theme-slate"
