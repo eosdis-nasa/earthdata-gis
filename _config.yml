@@ -1,13 +1,9 @@
 project:
   type: website
 
-  resources:
-    - "CNAME"
-
 website:
   page-navigation: true
   title: "KLEB Documentation"
-  site-url: "https://docs.kleb.cloud
   repo-url: https://github.com/eosdis-nasa/earthdata-gis
   repo-actions: [edit, issue]
 
