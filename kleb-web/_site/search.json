@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "KLEB Web",
+    "section": "",
+    "text": "Welcome\nThis is a minimal Quarto landing page for the kleb-web site. The site will be published with a CNAME of docs.kleb.cloud."
+  }
+]

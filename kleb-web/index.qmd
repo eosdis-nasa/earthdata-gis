@@ -1,0 +1,10 @@
+---
+title: "KLEB Web"
+subtitle: "Documentation preview"
+format: html
+---
+
+# Welcome
+
+This is a minimal Quarto landing page for the `kleb-web` site. The site will be published with a CNAME of `docs.kleb.cloud`.
+

@@ -1,0 +1,11 @@
+project:
+  type: website
+  resources:
+    - CNAME
+
+website:
+  title: "KLEB Web"
+  navbar:
+    right:
+      - text: "Home"
+        href: index.qmd
