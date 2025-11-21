@@ -1,0 +1,30 @@
+﻿quarto.exe : pandoc -no-cache --verbose
+At line:1 char:79
++ ... \kleb-web'; & 'C:\Program Files\Quarto\bin\quarto.exe' 
+render -no-cac ...
++                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (pandoc -no-cache - 
+   -verbose:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  to: html
+  output-file: index.html
+  standalone: true
+  title-prefix: KLEB Web
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  variables: {}
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: KLEB Web Home
+  
+Unknown option -n.
+Try pandoc --help for more information.
+WARN: Error encountered when rendering files

@@ -1,0 +1,12 @@
+project:
+  type: website
+  resources:
+    - styles.css
+
+website:
+  title: "Known Limitations and Expected Behaviors"
+  navbar:
+    right:
+      - text: "Home"
+        href: index.qmd
+  # site-level resources handled under project.resources
