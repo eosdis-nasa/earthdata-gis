@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Known Limitations and Expected Behaviors",
+    "section": "",
+    "text": "Navigation\n\n\nWelcome\nOverview & Guidance\n\nPurpose of the Documentation Hub\nHow to Use This Resource\n\nEGIS Limitations\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\nServices\n\nMap Services\nFeature Services\nImage Services\nOGC Services\n\nProduct & Platform Behavior\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\nThese docs help you use the services provided by the Earthdata Search Platform and NASA’s CMR STAC. Its purpose is to be a resource for interacting with NASA data and provide use cases as well as behaviors in ArcGIS Pro and open-source data.\n\n\n\n\n\n\nPurpose of the Documentation Hub\nHow to Use This Resource\n\n\n\n\n\n\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\n\n\n\n\n\n\nMap Services\nFeature Services\nImage Services\nOGC Services\nService Announcements\n\n\n\n\n\n\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\n\n\n\nDashboards\nExperience Builder\nWeb AppBuilder\nArcGIS Online vs Enterprise\nThird Party Tools\n\n\n\n\n\n\n\nData Standards & Managements\n\n\n\n\n\n\n\nGeneral Documentation Links\nHow-To\nExternal Resources\n\n\n\n\n\n\n\n\n\n\n\nTo learn from examples, see the Tutorial Page for  examples of data services and images.\nThis is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Known Limitations and Expected Behaviors",
+    "section": "",
+    "text": "These docs help you use the services provided by the Earthdata Search Platform and NASA’s CMR STAC. Its purpose is to be a resource for interacting with NASA data and provide use cases as well as behaviors in ArcGIS Pro and open-source data.\n\n\n\n\n\n\nPurpose of the Documentation Hub\nHow to Use This Resource\n\n\n\n\n\n\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\n\n\n\n\n\n\nMap Services\nFeature Services\nImage Services\nOGC Services\nService Announcements\n\n\n\n\n\n\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\n\n\n\nDashboards\nExperience Builder\nWeb AppBuilder\nArcGIS Online vs Enterprise\nThird Party Tools\n\n\n\n\n\n\n\nData Standards & Managements\n\n\n\n\n\n\n\nGeneral Documentation Links\nHow-To\nExternal Resources"
+  },
+  {
+    "objectID": "index.html#new-to-earthdata-seach-and-crm-stac",
+    "href": "index.html#new-to-earthdata-seach-and-crm-stac",
+    "title": "Known Limitations and Expected Behaviors",
+    "section": "",
+    "text": "To learn from examples, see the Tutorial Page for  examples of data services and images."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "kleb-project/index.html",
+    "href": "kleb-project/index.html",
+    "title": "The KLEB project",
+    "section": "",
+    "text": "Context for project"
+  },
+  {
+    "objectID": "kleb-project/index.html#project-context",
+    "href": "kleb-project/index.html#project-context",
+    "title": "The KLEB project",
+    "section": "",
+    "text": "Context for project"
+  },
+  {
+    "objectID": "kleb-project/index.html#project-goals",
+    "href": "kleb-project/index.html#project-goals",
+    "title": "The KLEB project",
+    "section": "Project Goals",
+    "text": "Project Goals\n\nLeverage existing open source documents\nUnderstand the limitations of data within ArcGIS Pro\nUnderstand the limitations of data within open-source platforms\nTrack known issues and behaviors for commnunity involvement\n\n\nStakeholder Benefits\n\nGeneral Public: Interactive stories and test cases\nData producers/Researchers (Curators): processing and self-publishing\nCommunication:\n\n\n\nOverview\n Image Service Compatibility Matrix. Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB."
+  }
+]
