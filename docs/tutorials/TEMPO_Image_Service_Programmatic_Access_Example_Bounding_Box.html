@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Accessing, Analyzing, &amp; Visualizing TEMPO data through ArcGIS Image Services Programmatically (Bounding Box) – kleb-web</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">kleb-web</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#data-scope" id="toc-data-scope" class="nav-link" data-scroll-target="#data-scope">Data &amp; Scope</a></li>
+  <li><a href="#notebook-author-affiliation" id="toc-notebook-author-affiliation" class="nav-link" data-scroll-target="#notebook-author-affiliation">Notebook Author / Affiliation</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">1. Setup</a>
+  <ul class="collapse">
+  <li><a href="#install-python-packages" id="toc-install-python-packages" class="nav-link" data-scroll-target="#install-python-packages">1.1 Install Python packages</a></li>
+  <li><a href="#import-python-libraries" id="toc-import-python-libraries" class="nav-link" data-scroll-target="#import-python-libraries">1.2 Import Python libraries</a></li>
+  <li><a href="#enable-function-to-convert-between-human-readable-dates-and-unix-timestamps" id="toc-enable-function-to-convert-between-human-readable-dates-and-unix-timestamps" class="nav-link" data-scroll-target="#enable-function-to-convert-between-human-readable-dates-and-unix-timestamps">1.3 Enable function to convert between human-readable dates and Unix timestamps</a></li>
+  </ul></li>
+  <li><a href="#user-selections" id="toc-user-selections" class="nav-link" data-scroll-target="#user-selections">2. User Selections</a>
+  <ul class="collapse">
+  <li><a href="#choose-tempo-productvariable-of-interest" id="toc-choose-tempo-productvariable-of-interest" class="nav-link" data-scroll-target="#choose-tempo-productvariable-of-interest">2.1 Choose TEMPO product/variable of interest</a></li>
+  <li><a href="#choose-time-period-of-interest" id="toc-choose-time-period-of-interest" class="nav-link" data-scroll-target="#choose-time-period-of-interest">2.2 Choose time period of interest</a></li>
+  <li><a href="#choose-bounding-box-envelope-of-interest" id="toc-choose-bounding-box-envelope-of-interest" class="nav-link" data-scroll-target="#choose-bounding-box-envelope-of-interest">2.3 Choose bounding box (envelope) of interest</a></li>
+  </ul></li>
+  <li><a href="#identify-number-and-timestamp-of-tempo-scans-in-time-period-of-interest" id="toc-identify-number-and-timestamp-of-tempo-scans-in-time-period-of-interest" class="nav-link" data-scroll-target="#identify-number-and-timestamp-of-tempo-scans-in-time-period-of-interest">3. Identify number and timestamp of TEMPO scans in time period of interest</a></li>
+  <li><a href="#retreive-data-values-for-area-of-interest-for-selected-time-period" id="toc-retreive-data-values-for-area-of-interest-for-selected-time-period" class="nav-link" data-scroll-target="#retreive-data-values-for-area-of-interest-for-selected-time-period">4. Retreive data values for area of interest for selected time period</a>
+  <ul class="collapse">
+  <li><a href="#send-get-samples-request" id="toc-send-get-samples-request" class="nav-link" data-scroll-target="#send-get-samples-request">4.1 Send Get Samples request</a>
+  <ul class="collapse">
+  <li><a href="#get-samples-request" id="toc-get-samples-request" class="nav-link" data-scroll-target="#get-samples-request">4.1 Get Samples request</a></li>
+  <li><a href="#extract-data-into-a-dataframe" id="toc-extract-data-into-a-dataframe" class="nav-link" data-scroll-target="#extract-data-into-a-dataframe">4.2 Extract data into a dataframe</a></li>
+  <li><a href="#display-the-data-in-a-chart" id="toc-display-the-data-in-a-chart" class="nav-link" data-scroll-target="#display-the-data-in-a-chart">4.3 Display the data in a chart</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#create-an-interactive-mapper" id="toc-create-an-interactive-mapper" class="nav-link" data-scroll-target="#create-an-interactive-mapper">5. Create an interactive mapper</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Accessing, Analyzing, &amp; Visualizing TEMPO data through ArcGIS Image Services Programmatically (Bounding Box)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Overview</strong> Selected TEMPO data have been processed into free, publicly available ArcGIS image services that provide pre-filtered, analysis-ready imagery/data.</p>
+<p>This notebook illustrates the following:</p>
+<ul>
+<li>Choose a TEMPO image service to query</li>
+<li>Select a time period and geometry bounding box (envelope) of interest</li>
+<li>View data values for area of interest in a table</li>
+<li>Chart returned values for area of interest</li>
+<li>View imagery for the time period of interest in interactive mapper</li>
+</ul>
+<p><strong>Why ArcGIS image services?</strong> Each TEMPO ArcGIS image service is hosted at a service URL, which has several built-in functions provided through the <a href="https://developers.arcgis.com/rest/services-reference/enterprise/image-service/">ArcGIS image service REST API</a>. These functionalities can be accessed via webpage interfaces or called programatically, providing ways to access, analyze, and display the TEMPO data.</p>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<p>Note: ESRI software/licenses are NOT required to access the services via the interfaces or programatically. No GIS software is required to access these TEMPO image services (although there are many methods to use these services in GIS).</p>
+<p><strong>Required:</strong> - Basic Python knowledge (variables, loops, functions) - Familiarity with TEMPO instrument and data products</p>
+<p><strong>Python Libraries:</strong> - <a href="http://matplotlib.org/">matplotlib</a> - for creating plots and visualizations - <a href="https://numpy.org/">numpy</a> - for numerical operations - <a href="https://github.com/jupyter-widgets/ipyleaflet/blob/master/python/ipyleaflet/README.md">ipyleaflet</a> - for visualization in interactive mapper - <a href="https://github.com/psf/requests">requests</a> - for sending HTTP requests to service API</p>
+</section>
+<section id="data-scope" class="level3">
+<h3 class="anchored" data-anchor-id="data-scope">Data &amp; Scope</h3>
+<p>Each TEMPO ArcGIS image service has a portal page with detailed descriptions on the service, the filtering applied, geographic and temporal coverage, as well as access to the online map viewer to view the image service. It is strongly recommended to read over the service description to ensure understanding of the data.</p>
+<p>The TEMPO image services are available in the Esri <a href="https://livingatlas.arcgis.com/en/browse/?q=tempo#q=tempo&amp;d=2">Living Atlas of the World</a>.</p>
+<p>The example in this notebook uses: - <strong>Product</strong>: TEMPO_NO2_L3_V04 (Level-3 gridded NO₂ tropopsheric column) - <strong>Resolution</strong>: approximately 2.1 km × 4.4 km, hourly during daylight - <strong>Coverage</strong>: North America - <strong>Example region</strong>: Hampton Roads, Virginia</p>
+<p><em>Methods apply to other TEMPO products (formaldehyde, ozone, etc.) and regions within North America.</em></p>
+<p>TEMPO Version 04 (V04) data are available from September 17, 2025 to present. The previous TEMPO data version (V03) was released publicly on May 24, 2024, and cover the time period from August 2, 2023 to September 16, 2025. All observations since the beginning of the mission are being reprocessed with V04 algorithms, with V04 products becoming publicly available in this service as they are reprocessed. Once the V03 data reprocessing is completed, the V03 service will be deprecated.</p>
+</section>
+<section id="notebook-author-affiliation" class="level3">
+<h3 class="anchored" data-anchor-id="notebook-author-affiliation">Notebook Author / Affiliation</h3>
+<ul>
+<li>Author: Atmospheric Science Data Center</li>
+<li>Questions? Please post questions on the <a href="https://forum.earthdata.nasa.gov/">NASA Earthdata Forum</a></li>
+</ul>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
+<section id="install-python-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-python-packages">1.1 Install Python packages</h3>
+<div id="cell-5" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Python packages if not available</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install --quiet ipywidgets nodejs traitlets numpy pandas matplotlib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="import-python-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="import-python-libraries">1.2 Import Python libraries</h3>
+<div id="cell-7" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For accessing data and creating chart</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timezone</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># For creating interactive mapper</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipyleaflet <span class="im">import</span> Map, ImageService, basemaps, WidgetControl</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> SelectionSlider, Layout, Label, VBox</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> Output, HTML</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Set dataframe view options to ensure all rows appear (optional)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">"display.max_rows"</span>, <span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="enable-function-to-convert-between-human-readable-dates-and-unix-timestamps" class="level3">
+<h3 class="anchored" data-anchor-id="enable-function-to-convert-between-human-readable-dates-and-unix-timestamps">1.3 Enable function to convert between human-readable dates and Unix timestamps</h3>
+<p>The TEMPO image services store the timestamp of each data scan as a Unix timestamp (e.g., 1752582321), which is the number of seconds since January 1, 1970 UTC. As these integers are not intuitive, we will use two custom functions to convert between Unix timestamps and human-readable date time strings.</p>
+<div id="cell-9" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function to take input time as string and convert to integer of seconds since unix epoch UTC (Jan 1, 1970)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_milliseconds(date_time_str):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Converts a date-time string in 'YYYY-MM-DD HH:MM:SS' format to milliseconds since epoch."""</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    inputDate <span class="op">=</span> dt.datetime.strptime(date_time_str, <span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(inputDate.replace(tzinfo<span class="op">=</span>timezone.utc).timestamp() <span class="op">*</span> <span class="dv">1000</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># function to take input time as integer of seconds since unix epoch UTC (Jan 1, 1970) and convert to string in 'YYYY-MM-DDTHH:MM:SSZ' format</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_from_milliseconds(milliseconds_since_epoch):</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Converts milliseconds since epoch to a date-time string in 'YYYY-MM-DDTHH:MM:SSZ' format."""</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    inputDateMilli <span class="op">=</span> datetime.fromtimestamp((milliseconds_since_epoch) <span class="op">/</span> <span class="dv">1000</span>, tz<span class="op">=</span>timezone.utc)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> inputDateMilli.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">T%H:%M:%SZ"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="user-selections" class="level2">
+<h2 class="anchored" data-anchor-id="user-selections">2. User Selections</h2>
+<p>Users can select the variable, time window, and bounding box (Xmin, Ymin, Xmax, Ymax) of interest or use defaults. Several of the following sections allow users to choose between various options to tailor this code to their desired analysis. These sections have a default option that will be used if no changes are made. To select one of the other available options, users must adjust which lines of code are commented out (the # at the beginning of the code line) as noted in the instructions for the section.</p>
+<section id="choose-tempo-productvariable-of-interest" class="level3">
+<h3 class="anchored" data-anchor-id="choose-tempo-productvariable-of-interest">2.1 Choose TEMPO product/variable of interest</h3>
+<p>The default is TEMPO NO2 tropospheric column. Users may instead select formaldehyde (HCHO) total column or total column ozone (only one service/variable can be selected at a time).</p>
+<div id="cell-12" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: Use exactly one image_service_url + variable_name. Comment out others.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1: NO2 image service (default)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># image_service_url = "https://gis.earthdata.nasa.gov/image/rest/services/C2930763263-LARC_CLOUD/TEMPO_NO2_L3_V03_HOURLY_TROPOSPHERIC_VERTICAL_COLUMN/ImageServer"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># variable_name = "NO2_Troposphere"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2: Formaldehyde image service</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># image_service_url = "https://gis.earthdata.nasa.gov/image/rest/services/C2930761273-LARC_CLOUD/TEMPO_HCHO_L3_V03_HOURLY_VERTICAL_COLUMN/ImageServer"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># variable_name = "HCHO"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 3: Total Column Ozone</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># image_service_url = "https://gis.earthdata.nasa.gov/image/rest/services/C2930764281-LARC_CLOUD/TEMPO_O3TOT_L3_V03_HOURLY_OZONE_COLUMN_AMOUNT/ImageServer"</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># variable_name = "Ozone_Column_Amount"</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 4: NO2 Image Service v4</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># image_service_url = "https://gis.earthdata.nasa.gov/image/rest/services/C3685896708-LARC_CLOUD/TEMPO_NO2_L3_V04_HOURLY_TROPOSPHERIC_VERTICAL_COLUMN/ImageServer"</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># variable_name = "NO2_Troposphere"</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 5: Formaldehyde Image Service v4</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>image_service_url <span class="op">=</span> <span class="st">"https://gis.earthdata.nasa.gov/image/rest/services/C3685897141-LARC_CLOUD/TEMPO_HCHO_L3_V04_HOURLY_VERTICAL_COLUMN/ImageServer"</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>variable_name <span class="op">=</span> <span class="st">"HCHO"</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 6: Ozone Image Service v4</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># image_service_url = "https://gis.earthdata.nasa.gov/image/rest/services/C3685896625-LARC_CLOUD/TEMPO_O3TOT_L3_V04_HOURLY_OZONE_COLUMN_AMOUNT/ImageServer"</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co"># variable_name = "Ozone_Column_Amount"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="choose-time-period-of-interest" class="level3">
+<h3 class="anchored" data-anchor-id="choose-time-period-of-interest">2.2 Choose time period of interest</h3>
+<p>There are two options: * Option 1 (default): Time period is yesterday (last 24 hours from present) * Option 2: Manually select any time period within scope of TEMPO mission (August 2, 2023 - present)</p>
+<p>Note: User must comment out the option that is not in use. By default, Option 2 is commented out.</p>
+<div id="cell-14" class="cell" data-tags="[]" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Choose starting and ending dates to run against</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>yesterday <span class="op">=</span> dt.datetime.today() <span class="op">-</span> dt.timedelta(days<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> dt.datetime.today()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1 (Default): Yesterday - today </span><span class="al">NOTE</span><span class="co">: converts local computer time to UTC</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># If using Google Colab, use this time_options to account for a bug that occurs if more than 5 timeslices are called at a time</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># time_options = [(time_strings[i], timestamps[i]) for i in range(5)]</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">"""Note: If using Option 2, comment out the two lines below:"""</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># start_date_time_str = str(dt.datetime(yesterday.year, yesterday.month, yesterday.day))</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># end_date_time_str = str(dt.datetime(today.year, today.month, today.day, today.hour))</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># OR</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2: If not using Google Colab, use this time_options to call all timeslices. Change specifc time period of interest as desired</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">"""Note: If using Option 1, comment out the two lines below:"""</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>start_date_time_str <span class="op">=</span> <span class="st">"2025-09-20 0:01:00"</span> <span class="co">#in 'YYYY-MM-DD HH:MM:SS' format "2025-04-20 12:00:00"</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>end_date_time_str <span class="op">=</span> <span class="st">"2025-09-25 05:00:00"</span> <span class="co">#in 'YYYY-MM-DD HH:MM:SS' format "2025-05-25 12:00:00"</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert user input dates to milliseconds since epoch</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> convert_to_milliseconds(start_date_time_str)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> convert_to_milliseconds(end_date_time_str)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The time period of interest has been defined as: Start = </span><span class="sc">{</span>start_date_time_str<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>start_time<span class="sc">}</span><span class="ss">); End: = </span><span class="sc">{</span>end_date_time_str<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>end_time<span class="sc">}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The time period of interest has been defined as: Start = 2025-09-20 0:01:00 (1758326460000); End: = 2025-09-25 05:00:00 (1758776400000)</code></pre>
+</div>
+</div>
+</section>
+<section id="choose-bounding-box-envelope-of-interest" class="level3">
+<h3 class="anchored" data-anchor-id="choose-bounding-box-envelope-of-interest">2.3 Choose bounding box (envelope) of interest</h3>
+<p>Provide WGS84 (EPSG:4326) coordinates. Example below is Hampton Roads, VA area. Update as needed.</p>
+<div id="cell-16" class="cell" data-tags="[]" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bounding box / geometry envelope in WGS84 (EPSG:4326)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>xmin, ymin <span class="op">=</span> <span class="op">-</span><span class="fl">76.6</span>, <span class="fl">37.1</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>xmax, ymax <span class="op">=</span> <span class="op">-</span><span class="fl">76.3</span>, <span class="fl">37.3</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>geometry_envelope <span class="op">=</span> {</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"xmin"</span>: xmin,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ymin"</span>: ymin,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"xmax"</span>: xmax,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ymax"</span>: ymax,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"spatialReference"</span>: {<span class="st">"wkid"</span>: <span class="dv">4326</span>}</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Geometry (xmin, ymin, xmax, ymax):"</span>, xmin, ymin, xmax, ymax)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Geometry (xmin, ymin, xmax, ymax): -76.6 37.1 -76.3 37.3</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="identify-number-and-timestamp-of-tempo-scans-in-time-period-of-interest" class="level1">
+<h1>3. Identify number and timestamp of TEMPO scans in time period of interest</h1>
+<p>The timestamp of each TEMPO scan is stored as a dimension in the image service and can be accessed by sending a Multidimenaional Info request to the service URL.</p>
+<div id="cell-19" class="cell" data-tags="[]" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create url for multidimensional info request</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dim_info_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>image_service_url<span class="sc">}</span><span class="ss">/multidimensionalInfo"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Make request to service API</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dim_info <span class="op">=</span> requests.get(dim_info_url, params<span class="op">=</span>{<span class="st">"f"</span>: <span class="st">"json"</span>}).json()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>all_times <span class="op">=</span> dim_info[<span class="st">"multidimensionalInfo"</span>][<span class="st">"variables"</span>][<span class="dv">0</span>][<span class="st">"dimensions"</span>][<span class="dv">0</span>][<span class="st">"values"</span>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter to timestamps within the desired range and print count of scans found</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>timestamps <span class="op">=</span> [t <span class="cf">for</span> t <span class="kw">in</span> all_times <span class="cf">if</span> start_time <span class="op">&lt;=</span> t <span class="op">&lt;=</span> end_time]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of TEMPO scans:"</span>, <span class="bu">len</span>(timestamps))</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate through TEMPO scans and print timestamps as Unix epoch and date string</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> timestamps:</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    date_strings <span class="op">=</span> convert_from_milliseconds(t)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(t, <span class="st">" "</span>, date_strings)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of TEMPO scans: 67
+1758368488000   2025-09-20T11:41:28Z
+1758370896000   2025-09-20T12:21:36Z
+1758373304000   2025-09-20T13:01:44Z
+1758376904000   2025-09-20T14:01:44Z
+1758380504000   2025-09-20T15:01:44Z
+1758384104000   2025-09-20T16:01:44Z
+1758387704000   2025-09-20T17:01:44Z
+1758391304000   2025-09-20T18:01:44Z
+1758394904000   2025-09-20T19:01:44Z
+1758398504000   2025-09-20T20:01:44Z
+1758402104000   2025-09-20T21:01:44Z
+1758405704000   2025-09-20T22:01:44Z
+1758409304000   2025-09-20T23:01:44Z
+1758411712000   2025-09-20T23:41:52Z
+1758454867000   2025-09-21T11:41:07Z
+1758457275000   2025-09-21T12:21:15Z
+1758459683000   2025-09-21T13:01:23Z
+1758463283000   2025-09-21T14:01:23Z
+1758466883000   2025-09-21T15:01:23Z
+1758470483000   2025-09-21T16:01:23Z
+1758474083000   2025-09-21T17:01:23Z
+1758477683000   2025-09-21T18:01:23Z
+1758481283000   2025-09-21T19:01:23Z
+1758484883000   2025-09-21T20:01:23Z
+1758488483000   2025-09-21T21:01:23Z
+1758492083000   2025-09-21T22:01:23Z
+1758495683000   2025-09-21T23:01:23Z
+1758498091000   2025-09-21T23:41:31Z
+1758541246000   2025-09-22T11:40:46Z
+1758543654000   2025-09-22T12:20:54Z
+1758546062000   2025-09-22T13:01:02Z
+1758549662000   2025-09-22T14:01:02Z
+1758553262000   2025-09-22T15:01:02Z
+1758556862000   2025-09-22T16:01:02Z
+1758560462000   2025-09-22T17:01:02Z
+1758564062000   2025-09-22T18:01:02Z
+1758567662000   2025-09-22T19:01:02Z
+1758571262000   2025-09-22T20:01:02Z
+1758574862000   2025-09-22T21:01:02Z
+1758578462000   2025-09-22T22:01:02Z
+1758582062000   2025-09-22T23:01:02Z
+1758584470000   2025-09-22T23:41:10Z
+1758627624000   2025-09-23T11:40:24Z
+1758630032000   2025-09-23T12:20:32Z
+1758632440000   2025-09-23T13:00:40Z
+1758636040000   2025-09-23T14:00:40Z
+1758639640000   2025-09-23T15:00:40Z
+1758643240000   2025-09-23T16:00:40Z
+1758646840000   2025-09-23T17:00:40Z
+1758650440000   2025-09-23T18:00:40Z
+1758654040000   2025-09-23T19:00:40Z
+1758657640000   2025-09-23T20:00:40Z
+1758661240000   2025-09-23T21:00:40Z
+1758714004000   2025-09-24T11:40:04Z
+1758716412000   2025-09-24T12:20:12Z
+1758718820000   2025-09-24T13:00:20Z
+1758722420000   2025-09-24T14:00:20Z
+1758726020000   2025-09-24T15:00:20Z
+1758729620000   2025-09-24T16:00:20Z
+1758733220000   2025-09-24T17:00:20Z
+1758736820000   2025-09-24T18:00:20Z
+1758740420000   2025-09-24T19:00:20Z
+1758744020000   2025-09-24T20:00:20Z
+1758747620000   2025-09-24T21:00:20Z
+1758751220000   2025-09-24T22:00:20Z
+1758754820000   2025-09-24T23:00:20Z
+1758757228000   2025-09-24T23:40:28Z</code></pre>
+</div>
+</div>
+</section>
+<section id="retreive-data-values-for-area-of-interest-for-selected-time-period" class="level1">
+<h1>4. Retreive data values for area of interest for selected time period</h1>
+<p>Data values for a selected bounding box can be accessed by sending a Get Samples request to the service URL and returned in a json. The data are iterated through and values added to a dataframe. The dataframe is then viewed as a table.</p>
+<section id="send-get-samples-request" class="level2">
+<h2 class="anchored" data-anchor-id="send-get-samples-request">4.1 Send Get Samples request</h2>
+<section id="get-samples-request" class="level3">
+<h3 class="anchored" data-anchor-id="get-samples-request">4.1 Get Samples request</h3>
+<p>The user provided information above (variable, time, bounding box) are used to create a Get Samples request, which is sent to the service API. The data response is then stored in a json to access.</p>
+<div id="cell-22" class="cell" data-tags="[]" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create URL for Get Samples request</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>base_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>image_service_url<span class="sc">}</span><span class="ss">/getSamples/"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"geometry"</span>: json.dumps(geometry_envelope),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"geometryType"</span>: <span class="st">"esriGeometryEnvelope"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sampleDistance"</span>: <span class="st">""</span>,              <span class="co"># optional thinning</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sampleCount"</span>: <span class="st">""</span>,                 <span class="co"># optional limit</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mosaicRule"</span>: json.dumps({<span class="st">"multidimensionalDefinition"</span>:[{<span class="st">"variableName"</span>: variable_name}]}),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pixelSize"</span>: <span class="st">""</span>,                   <span class="co"># e.g., "0.05" to coarsen, if desired</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"returnFirstValueOnly"</span>: <span class="st">"false"</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"interpolation"</span>: <span class="st">"RSP_BilinearInterpolation"</span>,  <span class="co"># for smoother columns; use NN for exact pixel values</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"outFields"</span>: <span class="st">""</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sliceId"</span>: <span class="st">""</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"time"</span>: <span class="ss">f"</span><span class="sc">{</span>start_time<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>end_time<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"f"</span>: <span class="st">"pjson"</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the request to the service API</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(base_url, params<span class="op">=</span>params)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>response.raise_for_status()</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> response.json()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="extract-data-into-a-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="extract-data-into-a-dataframe">4.2 Extract data into a dataframe</h3>
+<p>The returned json contains the variable, timestamps, and data values for the TEMPO scans in the selected time period. Not all scans in the selected time period may have data for the selected envelope. The retrieved data are iterated through to find which scans had data for the selected envelope and adding those data values with their corresponding timestamps to a dataframe. The dataframe is displayed in a table format.</p>
+<div id="cell-24" class="cell" data-tags="[]" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract relevant information into a DataFrame</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> []</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sample <span class="kw">in</span> data.get(<span class="st">"samples"</span>, []):</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    attributes <span class="op">=</span> sample.get(<span class="st">"attributes"</span>, {})</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    var_value <span class="op">=</span> attributes.get(variable_name)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Only include the sample if it has a valid value for the variable of interest</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Note: this will result in timeslices being excluded if there are no data within the</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">    bounding box. Code may be modified to see all timestamps (i.e., include TEMPO scans</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    where there are no data)."""</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> var_value <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:  <span class="co"># keep zeros as valid values</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>            samples.append(</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                {</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"StdTime"</span>: attributes[<span class="st">"StdTime"</span>],</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>                    variable_name: <span class="bu">float</span>(var_value),  <span class="co"># Convert to float</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                }</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> (<span class="pp">TypeError</span>, <span class="pp">ValueError</span>):</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Skip if the value cannot be converted to float</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the list to a DataFrame</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(samples)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if dataframe is empty. If not empty, convert StdTime from Unix timestamp (milliseconds) to datetime and print dataframe</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> df.empty:</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"No </span><span class="sc">{</span>variable_name<span class="sc">}</span><span class="ss"> data found between </span><span class="sc">{</span>start_date_time_str<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>end_date_time_str<span class="sc">}</span><span class="ss"> "</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"for envelope (</span><span class="sc">{</span>xmin<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ymin<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>xmax<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ymax<span class="sc">}</span><span class="ss">)."</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">"StdTime"</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">"StdTime"</span>], unit<span class="op">=</span><span class="st">"ms"</span>)</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              StdTime          HCHO
+0 2025-09-20 11:41:28  1.167813e+16
+1 2025-09-20 12:21:36  1.275896e+16
+2 2025-09-20 13:01:44  1.747650e+16
+3 2025-09-20 14:01:44  1.018995e+16
+4 2025-09-20 15:01:44  1.132089e+16</code></pre>
+</div>
+</div>
+</section>
+<section id="display-the-data-in-a-chart" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-data-in-a-chart">4.3 Display the data in a chart</h3>
+<p>The data in the dataframe can be displayed in a chart. The chart can be exported for later use (this option is commented out by default).</p>
+<div id="cell-26" class="cell" data-tags="[]" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by time to calculate the average value for each timestamp</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_avg <span class="op">=</span> df.groupby(<span class="st">"StdTime"</span>, as_index<span class="op">=</span><span class="va">False</span>)[variable_name].mean()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>plt.plot(df_avg[<span class="st">"StdTime"</span>], df_avg[variable_name], marker<span class="op">=</span><span class="st">"o"</span>, linestyle<span class="op">=</span><span class="st">"-"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title and labels--user may change</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Average </span><span class="sc">{</span>variable_name<span class="sc">}</span><span class="ss"> Over Time (Envelope)"</span>)  <span class="co"># User may change title as desired</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Time (UTC)"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"Average </span><span class="sc">{</span>variable_name<span class="sc">}</span><span class="ss"> (molecules/cm^2)"</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># Change unit as needed for variable selected (e.g., Ozone total is Dobson units)</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Set grid, tick marks, and format</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.gca()</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_formatter(mdates.DateFormatter(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>))</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Save the plot to a local folder (include file path). Format set to PNG as default but can be changed.</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.savefig("outputGraph.png", format="png")</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot in notebook</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TEMPO_Image_Service_Programmatic_Access_Example_Bounding_Box_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="create-an-interactive-mapper" class="level1">
+<h1>5. Create an interactive mapper</h1>
+<p>This mapper includes all of the TEMPO scans within the selected time period. The viewer shows the entire scans (not just around the area of interest). The scans can be stepped through using the time slider. Users may zoom in/out on the map. Users can hover over the map to see coordinates. Users can click on the map to have the coordinate point display below the mapper.</p>
+<p>NOTE: There is a known bug in Google Colab that limits the time slider to 5 or fewer timesteps in the slider. This notebook has two options for the slider. Option 1 (default), which is hardcoded to only show the first 5 timestamps to avoid this issue, and Option 2, which will show all of the timestamps in the user’s selected time period.</p>
+<div id="cell-28" class="cell" data-tags="[]" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A handler that will update the map everytime the user moves the slider</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_image(change):</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    tempo_image_service.time <span class="op">=</span> [change.new, timestamps[<span class="dv">4</span>]]</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to define interactive map behavior</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_click(<span class="op">**</span>kwargs):</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""When a user clicks on the map, print coordinates below map"""</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kwargs.get(<span class="st">"type"</span>) <span class="op">==</span> <span class="st">"click"</span>:</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="bu">str</span>(kwargs.get(<span class="st">"coordinates"</span>)))</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""When a user hovers mouse over map, display coordinates within map"""</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kwargs.get(<span class="st">"type"</span>) <span class="op">==</span> <span class="st">"mousemove"</span>:</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        latlng <span class="op">=</span> kwargs.get(<span class="st">"coordinates"</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        lat, lng <span class="op">=</span> latlng</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        coordinates_label.value <span class="op">=</span> <span class="ss">f"Coordinates: (</span><span class="sc">{</span>lat<span class="sc">:.5f}</span><span class="ss">, </span><span class="sc">{</span>lng<span class="sc">:.5f}</span><span class="ss">)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-29" class="cell" data-tags="[]" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the map</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> Map(center<span class="op">=</span>(<span class="dv">47</span>, <span class="op">-</span><span class="dv">122</span>), zoom<span class="op">=</span><span class="dv">3</span>, basemap<span class="op">=</span>basemaps.Esri.WorldTopoMap)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set parameters for calling TEMPO image service</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""Note: The rendering_rule rasterFunction holds the colormap associated with the image service.</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">Replace with the appropriate colormap for best visualization depending on selected variable.</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">NO2: rendering_rule={"rasterFunction":"matter_RGB"},</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">HCHO: rendering_rule={"rasterFunction":"haline_RGB"},</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">Ozone Tot: rendering_rule={"rasterFunction":"batlow_RGB"}, """</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>tempo_image_service <span class="op">=</span> ImageService(</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    url<span class="op">=</span>image_service_url,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    rendering_rule<span class="op">=</span>{<span class="st">"rasterFunction"</span>: <span class="st">"matter_RGB"</span>},</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    time<span class="op">=</span>timestamps,</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">format</span><span class="op">=</span><span class="st">"jpgpng"</span>,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list with the user selected UTC times with time_values for easy visualization of time</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>time_strings <span class="op">=</span> [convert_from_milliseconds(t) <span class="cf">for</span> t <span class="kw">in</span> timestamps]</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of tuples to input in SelectionSlider's options for easy visualization of time</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1: If using Google Colab, use this time_options to account for a bug that occurs if more than 5 timeslices are called at a time</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>time_options <span class="op">=</span> [(time_strings[i], timestamps[i]) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2: If not using Google Colab, use this time_options to call all timeslices</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="co"># time_options = [(time_strings[i], timestamps[i]) for i in range(len(timestamps))]</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the slider</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> SelectionSlider(</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">"Time:"</span>, options<span class="op">=</span>time_options, layout<span class="op">=</span>Layout(width<span class="op">=</span><span class="st">"700px"</span>, height<span class="op">=</span><span class="st">"20px"</span>)</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="co"># slider = SelectionSlider(description='Time:', options=timestamps, layout=Layout(width='700px', height='20px'))</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Label for the VBox</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>time_label <span class="op">=</span> Label(value<span class="op">=</span><span class="st">"Time Slider"</span>)</span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Listens to the slider's user input and helps update the map</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>slider.observe(update_image, <span class="st">"value"</span>)</span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a><span class="co"># create a VBox to contain the slider and be placed in the map</span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>vbox <span class="op">=</span> VBox([slider, time_label])</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Slider placed in bottomleft of the map</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>control <span class="op">=</span> WidgetControl(widget<span class="op">=</span>vbox, position<span class="op">=</span><span class="st">"bottomleft"</span>)</span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Output widget to listen to the user's mouse hovering over the map</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> Output()</span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>controloutput <span class="op">=</span> WidgetControl(widget<span class="op">=</span>output, position<span class="op">=</span><span class="st">"topright"</span>)</span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Label widget to display coordinates</span></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>coordinates_label <span class="op">=</span> HTML(value<span class="op">=</span><span class="st">"Coordinates: "</span>)</span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>coordinates_control <span class="op">=</span> WidgetControl(widget<span class="op">=</span>coordinates_label, position<span class="op">=</span><span class="st">"bottomright"</span>)</span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Add all widgets to the map</span></span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>m.add(tempo_image_service)</span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>m.add(control)</span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>m.add(controloutput)</span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>m.add(coordinates_control)</span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a><span class="co"># When user hovers over the map coordinates_label gets updated and prints the coordinates where clicked</span></span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>m.on_interaction(on_click)</span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Call map</span></span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"8e1cd08325e74d20b943fb1c19fb2abc","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
