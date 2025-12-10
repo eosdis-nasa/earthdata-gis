@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>getting-started-arcgis – kleb-web</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">kleb-web</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started-with-image-services" id="toc-getting-started-with-image-services" class="nav-link active" data-scroll-target="#getting-started-with-image-services">Getting Started with Image Services</a>
+  <ul class="collapse">
+  <li><a href="#requests" id="toc-requests" class="nav-link" data-scroll-target="#requests">requests</a></li>
+  <li><a href="#arcgis-api-for-python" id="toc-arcgis-api-for-python" class="nav-link" data-scroll-target="#arcgis-api-for-python">ArcGIS API for Python</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="getting-started-with-image-services" class="level1">
+<h1>Getting Started with Image Services</h1>
+<p>NASA Image Services can also be accessed programmatically using a variety of standard, open source, or licensed Python libraries. This section will outline how this data may be accessed using requests on the REST endpoint, using the qgis module associated with the open source OSGeo QGIS desktop software, and the arcpy (Desktop) and arcgis (Online) licensed libraries associated with the ArcGIS suite.</p>
+<section id="requests" class="level2">
+<h2 class="anchored" data-anchor-id="requests">requests</h2>
+<p>The built-in library requests allows the user to programmatically access many of the underlying REST service interface capabilities such as statistics, image export, histograms, or slices. For example, users can acquire various statistics in specific fields in JSON format:</p>
+<div id="cell-2" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="vs">r'https://gis</span><span class="dv">.</span><span class="vs">earthdata</span><span class="dv">.</span><span class="vs">nasa</span><span class="dv">.</span><span class="vs">gov/image/rest/services/POWER/POWER_901_MONTHLY_METEOROLOGY_UTC/ImageServer/multiDimensionalInfo</span><span class="op">?</span><span class="vs">returnDimensionValues=always&amp;f=pjson'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(url)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>outDict <span class="op">=</span> {}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> variable_dict <span class="kw">in</span> r.json()[<span class="st">'multidimensionalInfo'</span>][<span class="st">'variables'</span>]:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    outDict[variable_dict[<span class="st">'name'</span>]] <span class="op">=</span> [variable_dict[<span class="st">'attributes'</span>][<span class="st">'standard_name'</span>],variable_dict[<span class="st">'unit'</span>]]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>display(pd.DataFrame.from_dict(outDict,orient<span class="op">=</span><span class="st">'index'</span>,columns<span class="op">=</span>[<span class="st">'Long Name'</span>,<span class="st">'Unit of Measurement'</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Long Name</th>
+<th data-quarto-table-cell-role="th">Unit of Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">CDD10</th>
+<td>Cooling_Degree_Days_Above_10_C</td>
+<td>degree-day</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">CDD18_3</th>
+<td>Cooling_Degree_Days_Above_18.3_C</td>
+<td>degree-day</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">DISPH</th>
+<td>Zero_Plane_Displacement_Height</td>
+<td>m</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">EVLAND</th>
+<td>Evaporation_Land</td>
+<td>kg m-2 s-1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">EVPTRNS</th>
+<td>Evapotranspiration_Energy_Flux</td>
+<td>W m-2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">FROST_DAYS</th>
+<td>Frost_Days</td>
+<td>days</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">GWETTOP</th>
+<td>Surface_Soil_Wetness</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">HDD10</th>
+<td>Heating_Degree_Days_Below_10_C</td>
+<td>degree-day</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">HDD18_3</th>
+<td>Heating_Degree_Days_Below_18.3_C</td>
+<td>degree-day</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">PBLTOP</th>
+<td>Planetary_Boundary_Layer_Top_Pressure</td>
+<td>Pa</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">PRECSNOLAND_SUM</th>
+<td>Snow_Precipitation_Land_Sum</td>
+<td>kg m-2 s-1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">PRECTOTCORR_SUM</th>
+<td>Precipitation_Corrected_Sum</td>
+<td>kg m-2 s-1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">PS</th>
+<td>Surface_Pressure</td>
+<td>Pa</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">QV10M</th>
+<td>Specific_Humidity_at_10_Meters</td>
+<td>kg/kg</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">QV2M</th>
+<td>Specific_Humidity_at_2_Meters</td>
+<td>kg/kg</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">RH2M</th>
+<td>Relative_Humidity_at_2_Meters</td>
+<td>%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">T10M</th>
+<td>Temperature_at_10_Meters</td>
+<td>K</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">T2M</th>
+<td>Temperature_at_2_Meters</td>
+<td>K</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">T2MDEW</th>
+<td>Dew/Frost_Point_at_2_Meters</td>
+<td>K</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">T2MWET</th>
+<td>Wet_Bulb_Temperature_at_2_Meters</td>
+<td>K</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">TO3</th>
+<td>Total_Column_Ozone</td>
+<td>Dobsons</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">TQV</th>
+<td>Total_Column_Precipitable_Water</td>
+<td>kg m-2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">TS</th>
+<td>Earth_Skin_Temperature</td>
+<td>K</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">WD10M</th>
+<td>Wind_Direction_at_10_Meters</td>
+<td>Degrees</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">WD2M</th>
+<td>Wind_Direction_at_2_Meters</td>
+<td>Degrees</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">WD50M</th>
+<td>Wind_Direction_at_50_Meters</td>
+<td>Degrees</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">WS10M</th>
+<td>Wind_Speed_at_10_Meters</td>
+<td>m/s</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">WS2M</th>
+<td>Wind_Speed_at_2_Meters</td>
+<td>m/s</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">WS50M</th>
+<td>Wind_Speed_at_50_Meters</td>
+<td>m/s</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="cell-3" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t2m_url <span class="op">=</span> <span class="vs">r'https://gis</span><span class="dv">.</span><span class="vs">earthdata</span><span class="dv">.</span><span class="vs">nasa</span><span class="dv">.</span><span class="vs">gov/image/rest/services/POWER/POWER_901_MONTHLY_METEOROLOGY_UTC/ImageServer/statistics</span><span class="op">?</span><span class="vs">variable=T2M&amp;renderingRule=&amp;f=pjson'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>r_t2m <span class="op">=</span> requests.get(t2m_url)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> r_t2m.json()[<span class="st">'statistics'</span>][<span class="dv">0</span>]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>display(stats)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<pre><code>{'min': 199.078125,
+ 'max': 314.9453125,
+ 'mean': 278.25700790851954,
+ 'standardDeviation': 21.776876164664852,
+ 'median': 282.22987132352944,
+ 'mode': 299.49635416666666,
+ 'skipX': 1,
+ 'skipY': 1,
+ 'count': 130999680}</code></pre>
+</div>
+</div>
+<p>Similarly, querying this variable can show what slice identifiers correspond to this variable. Queries on specific points for slices can be browsed on the slices capability pane. A sample is shown below:</p>
+<div id="cell-5" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="vs">r'https://gis</span><span class="dv">.</span><span class="vs">earthdata</span><span class="dv">.</span><span class="vs">nasa</span><span class="dv">.</span><span class="vs">gov/image/rest/services/POWER/POWER_901_MONTHLY_METEOROLOGY_UTC/ImageServer/slices</span><span class="op">?</span><span class="vs">multidimensionalDefinition=%7B%22variableName%22%3A%22T2M%22%7D&amp;f=json'</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(url)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>display(r.json()[<span class="st">'slices'</span>][<span class="dv">25</span>:<span class="dv">55</span>])</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#'Values' dictionary list indices indicate epoch time; e.g., 415490850000 indicates Wednesday, March 2, 1983 10:07:30 PM GMT (per &lt;https://www.epochconverter.com/&gt;)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<pre><code>[{'sliceId': 8593,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [415238400000]}]},
+ {'sliceId': 8594,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [417916800000]}]},
+ {'sliceId': 8595,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [420508800000]}]},
+ {'sliceId': 8596,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [423187200000]}]},
+ {'sliceId': 8597,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [425779200000]}]},
+ {'sliceId': 8598,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [428457600000]}]},
+ {'sliceId': 8599,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [431136000000]}]},
+ {'sliceId': 8600,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [433728000000]}]},
+ {'sliceId': 8601,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [436406400000]}]},
+ {'sliceId': 8602,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [438998400000]}]},
+ {'sliceId': 8603,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [441676800000]}]},
+ {'sliceId': 8604,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [444355200000]}]},
+ {'sliceId': 8605,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [446860800000]}]},
+ {'sliceId': 8606,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [449539200000]}]},
+ {'sliceId': 8607,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [452131200000]}]},
+ {'sliceId': 8608,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [454809600000]}]},
+ {'sliceId': 8609,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [457401600000]}]},
+ {'sliceId': 8610,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [460080000000]}]},
+ {'sliceId': 8611,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [462758400000]}]},
+ {'sliceId': 8612,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [465350400000]}]},
+ {'sliceId': 8613,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [468028800000]}]},
+ {'sliceId': 8614,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [470620800000]}]},
+ {'sliceId': 8615,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [473299200000]}]},
+ {'sliceId': 8616,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [475977600000]}]},
+ {'sliceId': 8617,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [478396800000]}]},
+ {'sliceId': 8618,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [481075200000]}]},
+ {'sliceId': 8619,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [483667200000]}]},
+ {'sliceId': 8620,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [486345600000]}]},
+ {'sliceId': 8621,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [488937600000]}]},
+ {'sliceId': 8622,
+  'multidimensionalDefinition': [{'variableName': 'T2M',
+    'dimensionName': 'StdTime',
+    'values': [491616000000]}]}]</code></pre>
+</div>
+</div>
+<p>Finally, by browsing this REST endpoint capability or parsing it via JSON, a user can query a specific coordinate (100,50) for August 2nd, 1983 (slice 50, epoch time 428639580000):</p>
+<div id="cell-7" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="vs">r'https://gis</span><span class="dv">.</span><span class="vs">earthdata</span><span class="dv">.</span><span class="vs">nasa</span><span class="dv">.</span><span class="vs">gov/image/rest/services/POWER/POWER_901_MONTHLY_METEOROLOGY_UTC/ImageServer/identify</span><span class="op">?</span><span class="vs">geometry=%7B%22x%22%3A100%2C%22y%22%3A50%7D&amp;geometryType=esriGeometryPoint&amp;mosaicRule=&amp;renderingRule=&amp;renderingRules=&amp;pixelSize=&amp;sliceId=1950&amp;time=&amp;returnGeometry=true&amp;returnCatalogItems=true&amp;returnPixelValues=true&amp;processAsMultidimensional=true&amp;maxItemCount=10&amp;f=pjson'</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(url)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="st">"*Sample requests JSON response:*"</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>display(r.json())</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> r.json()[<span class="st">'value'</span>].split(<span class="st">'.'</span>)[<span class="dv">0</span>]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>Markdown(<span class="ss">f"**Query result:** </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss"> K"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(<span class="vs">r'https://gis</span><span class="dv">.</span><span class="vs">earthdata</span><span class="dv">.</span><span class="vs">nasa</span><span class="dv">.</span><span class="vs">gov/image/rest/services/POWER/POWER_901_MONTHLY_METEOROLOGY_UTC/ImageServer/statistics</span><span class="op">?</span><span class="vs">variable=T2M&amp;renderingRule=&amp;f=pjson'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>temp_min <span class="op">=</span> r.json()[<span class="st">'statistics'</span>][<span class="dv">0</span>][<span class="st">'min'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><em>Sample requests JSON response:</em></p>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>{'objectId': 0,
+ 'name': 'Pixel',
+ 'value': '2.28882e-05',
+ 'location': {'x': 100,
+  'y': 50,
+  'spatialReference': {'wkid': 4326, 'latestWkid': 4326}},
+ 'properties': {'Attributes': [{'Variable': 'EVLAND',
+    'StdTime': 1501459200000,
+    'StdTime_Max': 1501459200000}]},
+ 'catalogItems': None,
+ 'catalogItemVisibilities': []}</code></pre>
+</div>
+</div>
+</section>
+<section id="arcgis-api-for-python" class="level2">
+<h2 class="anchored" data-anchor-id="arcgis-api-for-python">ArcGIS API for Python</h2>
+<p>Users may perform much of the same functionality in web maps and in desktop software using Esri-developed Python packages arcpy and arcgis. This section of the tutorial will focus on the freely available online arcgis module which can be used easily in Esri’s Experience Builder, Jupyter notebooks, or across a wide variety of programming and web environments and use cases.</p>
+<p>The below examples use the GPM and POWER image services.</p>
+<p>A user can import a give Image Service into a web map as follows utilizing the arcgis.mapping utilities to generate a custom map:</p>
+<div id="cell-9" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcgis</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> arcgis.mapping.WebMap()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>GPM_url <span class="op">=</span> <span class="vs">r'https://arcgis</span><span class="dv">.</span><span class="vs">gesdisc</span><span class="dv">.</span><span class="vs">eosdis</span><span class="dv">.</span><span class="vs">nasa</span><span class="dv">.</span><span class="vs">gov/authoritative/rest/services/GPM_3IMERGHHE_06/ImageServer'</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> arcgis.raster.ImageryLayer(GPM_url)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>m.add_layer(layer)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>display(m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"dc22e79374ae4cd2921a1891c771c9d7","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<div class="map-static-img-preview-0856b8d9-7bcc-4704-830b-c0ae9d833b23"><img src=""></div>
+</div>
+<div class="cell-output cell-output-display">
+<div class="map-html-embed-preview-0856b8d9-7bcc-4704-830b-c0ae9d833b23"></div>
+</div>
+</div>
+<p>Users may also reference ArcGIS Online item ID’s to import multiple layers with embedded symbology replacing the layer variable as noted above with gis.content.get(<arcgis item="" id="">).</arcgis></p>
+<p>Many of the queries in this section are attributes acquired via calling the dir function in established Imagery Layers and building out attributes in a more sequential fashion but with many similar outputs to the requests section, building them via layer object attributes rather than hardcoding into a URL request.</p>
+<p>This is shown as such in the plethora of capabilities listed in the below code:</p>
+<div id="cell-11" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcgis</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="vs">r'https://gis</span><span class="dv">.</span><span class="vs">earthdata</span><span class="dv">.</span><span class="vs">nasa</span><span class="dv">.</span><span class="vs">gov/image/rest/services/POWER/POWER_901_MONTHLY_METEOROLOGY_UTC/ImageServer'</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> arcgis.raster.ImageryLayer(url)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">dir</span>(layer))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['__abs__', '__add__', '__and__', '__class__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__div__', '__doc__', '__eq__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__module__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pow__', '__radd__', '__rand__', '__rdiv__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__weakref__', '__xor__', '_add_rasters', '_clone_layer', '_compute_multidimensional_info', '_con', '_datastore_raster', '_delete_rasters', '_extent', '_extent_set', '_filtered', '_fn', '_fnra', '_get_service_info', '_gis', '_hydrate', '_hydrated', '_ilm', '_invoke', '_lyr_dict', '_lyr_domains', '_lyr_json', '_mosaic_operation', '_mosaic_rule', '_original_info', '_other_outputs', '_raster_info', '_read_tilesonly_layer', '_refresh', '_rendering_rule_from_item', '_rendering_service_layer', '_rendering_service_object', '_repr_jpeg_', '_repr_svg_', '_spatial_filter', '_temporal_filter', '_tiles_only', '_time_filter', '_token', '_update_raster', '_upload', '_uri', '_url', '_uses_gbl_function', '_where_clause', 'attribute_table', 'band_count', 'blend', 'cache_manager', 'calculate_volume', 'catalog_item', 'colormap', 'columns', 'compute_angles', 'compute_cache_info', 'compute_class_stats', 'compute_histograms', 'compute_pixel_location', 'compute_stats_and_histograms', 'compute_tie_points', 'draw_graph', 'export_image', 'extent', 'filter', 'filter_by', 'filtered_rasters', 'first', 'fromitem', 'get_download_info', 'get_histograms', 'get_raster_file', 'get_samples', 'height', 'histograms', 'identify', 'item_info', 'key_properties', 'last', 'legend', 'max', 'mean', 'measure', 'metadata', 'min', 'mosaic_by', 'mosaic_rule', 'multidimensional_info', 'pixel_type', 'plot_histograms', 'project', 'properties', 'query', 'query_boundary', 'raster_info', 'rasters', 'render_tilesonly_layer', 'rows', 'save', 'service', 'set_filter', 'slices', 'spectral_profile', 'statistics', 'sum', 'temporal_profile', 'thumbnail', 'tiles', 'tiles_only', 'to_features', 'url', 'validate', 'width']</code></pre>
+</div>
+</div>
+<p>For example, users may parse through various slices, shown as the dictionary in the sample below:</p>
+<div id="cell-13" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>slice_list <span class="op">=</span> layer.slices()[<span class="st">'slices'</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>display(slice_list[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<pre><code>{'sliceId': 0,
+ 'multidimensionalDefinition': [{'variableName': 'CDD10',
+   'dimensionName': 'StdTime',
+   'values': [349747200000]}]}</code></pre>
+</div>
+</div>
+<p>Slices and associated time slices for the Temperature at 2 Meters (T2M) variable can be loaded as follows:</p>
+<div id="cell-15" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>T2M_slices <span class="op">=</span> {}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">slice</span> <span class="kw">in</span> slice_list:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Stores underlying data in this particular service</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    multi_def <span class="op">=</span> <span class="bu">slice</span>[<span class="st">'multidimensionalDefinition'</span>][<span class="dv">0</span>]</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> multi_def[<span class="st">'variableName'</span>] <span class="op">==</span> <span class="st">'T2M'</span>:</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        Id <span class="op">=</span> <span class="bu">slice</span>[<span class="st">'sliceId'</span>]</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        time_epoch <span class="op">=</span> multi_def[<span class="st">'values'</span>][<span class="dv">0</span>]</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Convert epoch time (e.g., 349747200000 to GMT)</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        GMT <span class="op">=</span> datetime.datetime.fromtimestamp(time_epoch<span class="op">/</span><span class="dv">1000</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        T2M_slices[Id] <span class="op">=</span> [time_epoch,GMT]</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame.from_dict(T2M_slices,orient<span class="op">=</span><span class="st">'index'</span>,columns<span class="op">=</span>[<span class="st">'Epoch Time'</span>,<span class="st">'GMT Time'</span>])</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Epoch Time</th>
+<th data-quarto-table-cell-role="th">GMT Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8568</th>
+<td>349747200000</td>
+<td>1981-01-30 19:00:00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">8569</th>
+<td>352166400000</td>
+<td>1981-02-27 19:00:00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8570</th>
+<td>354844800000</td>
+<td>1981-03-30 20:00:00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">8571</th>
+<td>357436800000</td>
+<td>1981-04-29 20:00:00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8572</th>
+<td>360115200000</td>
+<td>1981-05-30 20:00:00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Now that the data has been compiled into user-readable time stamps, let us combine all previous analyses to assess a variable at a given point for a few months of the year.</p>
+<p>We start by categorizing each month into a set of slices:</p>
+<div id="cell-17" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Month'</span>] <span class="op">=</span> pd.DatetimeIndex(df[<span class="st">'GMT Time'</span>]).month</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Year'</span>] <span class="op">=</span> pd.DatetimeIndex(df[<span class="st">'GMT Time'</span>]).year</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'January'</span>, <span class="st">'February'</span>, <span class="st">'March'</span>, <span class="st">'April'</span>, <span class="st">'May'</span>, <span class="st">'June'</span>, <span class="st">'July'</span>, <span class="st">'August'</span>, <span class="st">'September'</span>, <span class="st">'October'</span>, <span class="st">'November'</span>, <span class="st">'December'</span>]</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>month_dict <span class="op">=</span> {}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,month <span class="kw">in</span> <span class="bu">enumerate</span>(months,<span class="dv">1</span>):</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    month_dict[month] <span class="op">=</span> df[df[<span class="st">'Month'</span>] <span class="op">==</span> i].index.tolist()</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>month_vis <span class="op">=</span> pd.DataFrame.from_dict(month_dict,orient<span class="op">=</span><span class="st">'index'</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>display(month_vis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">9</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">32</th>
+<th data-quarto-table-cell-role="th">33</th>
+<th data-quarto-table-cell-role="th">34</th>
+<th data-quarto-table-cell-role="th">35</th>
+<th data-quarto-table-cell-role="th">36</th>
+<th data-quarto-table-cell-role="th">37</th>
+<th data-quarto-table-cell-role="th">38</th>
+<th data-quarto-table-cell-role="th">39</th>
+<th data-quarto-table-cell-role="th">40</th>
+<th data-quarto-table-cell-role="th">41</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">January</th>
+<td>8568</td>
+<td>8580</td>
+<td>8592</td>
+<td>8604</td>
+<td>8616</td>
+<td>8628</td>
+<td>8640</td>
+<td>8652</td>
+<td>8664</td>
+<td>8676</td>
+<td>...</td>
+<td>8952</td>
+<td>8964</td>
+<td>8976</td>
+<td>8988</td>
+<td>9000</td>
+<td>9012</td>
+<td>9024</td>
+<td>9036</td>
+<td>9048</td>
+<td>9060</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">February</th>
+<td>8569</td>
+<td>8581</td>
+<td>8593</td>
+<td>8605</td>
+<td>8617</td>
+<td>8629</td>
+<td>8641</td>
+<td>8653</td>
+<td>8665</td>
+<td>8677</td>
+<td>...</td>
+<td>8953</td>
+<td>8965</td>
+<td>8977</td>
+<td>8989</td>
+<td>9001</td>
+<td>9013</td>
+<td>9025</td>
+<td>9037</td>
+<td>9049</td>
+<td>9061</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">March</th>
+<td>8570</td>
+<td>8582</td>
+<td>8594</td>
+<td>8606</td>
+<td>8618</td>
+<td>8630</td>
+<td>8642</td>
+<td>8654</td>
+<td>8666</td>
+<td>8678</td>
+<td>...</td>
+<td>8954</td>
+<td>8966</td>
+<td>8978</td>
+<td>8990</td>
+<td>9002</td>
+<td>9014</td>
+<td>9026</td>
+<td>9038</td>
+<td>9050</td>
+<td>9062</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">April</th>
+<td>8571</td>
+<td>8583</td>
+<td>8595</td>
+<td>8607</td>
+<td>8619</td>
+<td>8631</td>
+<td>8643</td>
+<td>8655</td>
+<td>8667</td>
+<td>8679</td>
+<td>...</td>
+<td>8955</td>
+<td>8967</td>
+<td>8979</td>
+<td>8991</td>
+<td>9003</td>
+<td>9015</td>
+<td>9027</td>
+<td>9039</td>
+<td>9051</td>
+<td>9063</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">May</th>
+<td>8572</td>
+<td>8584</td>
+<td>8596</td>
+<td>8608</td>
+<td>8620</td>
+<td>8632</td>
+<td>8644</td>
+<td>8656</td>
+<td>8668</td>
+<td>8680</td>
+<td>...</td>
+<td>8956</td>
+<td>8968</td>
+<td>8980</td>
+<td>8992</td>
+<td>9004</td>
+<td>9016</td>
+<td>9028</td>
+<td>9040</td>
+<td>9052</td>
+<td>9064</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">June</th>
+<td>8573</td>
+<td>8585</td>
+<td>8597</td>
+<td>8609</td>
+<td>8621</td>
+<td>8633</td>
+<td>8645</td>
+<td>8657</td>
+<td>8669</td>
+<td>8681</td>
+<td>...</td>
+<td>8957</td>
+<td>8969</td>
+<td>8981</td>
+<td>8993</td>
+<td>9005</td>
+<td>9017</td>
+<td>9029</td>
+<td>9041</td>
+<td>9053</td>
+<td>9065</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">July</th>
+<td>8574</td>
+<td>8586</td>
+<td>8598</td>
+<td>8610</td>
+<td>8622</td>
+<td>8634</td>
+<td>8646</td>
+<td>8658</td>
+<td>8670</td>
+<td>8682</td>
+<td>...</td>
+<td>8958</td>
+<td>8970</td>
+<td>8982</td>
+<td>8994</td>
+<td>9006</td>
+<td>9018</td>
+<td>9030</td>
+<td>9042</td>
+<td>9054</td>
+<td>9066</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">August</th>
+<td>8575</td>
+<td>8587</td>
+<td>8599</td>
+<td>8611</td>
+<td>8623</td>
+<td>8635</td>
+<td>8647</td>
+<td>8659</td>
+<td>8671</td>
+<td>8683</td>
+<td>...</td>
+<td>8959</td>
+<td>8971</td>
+<td>8983</td>
+<td>8995</td>
+<td>9007</td>
+<td>9019</td>
+<td>9031</td>
+<td>9043</td>
+<td>9055</td>
+<td>9067</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">September</th>
+<td>8576</td>
+<td>8588</td>
+<td>8600</td>
+<td>8612</td>
+<td>8624</td>
+<td>8636</td>
+<td>8648</td>
+<td>8660</td>
+<td>8672</td>
+<td>8684</td>
+<td>...</td>
+<td>8960</td>
+<td>8972</td>
+<td>8984</td>
+<td>8996</td>
+<td>9008</td>
+<td>9020</td>
+<td>9032</td>
+<td>9044</td>
+<td>9056</td>
+<td>9068</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">October</th>
+<td>8577</td>
+<td>8589</td>
+<td>8601</td>
+<td>8613</td>
+<td>8625</td>
+<td>8637</td>
+<td>8649</td>
+<td>8661</td>
+<td>8673</td>
+<td>8685</td>
+<td>...</td>
+<td>8961</td>
+<td>8973</td>
+<td>8985</td>
+<td>8997</td>
+<td>9009</td>
+<td>9021</td>
+<td>9033</td>
+<td>9045</td>
+<td>9057</td>
+<td>9069</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">November</th>
+<td>8578</td>
+<td>8590</td>
+<td>8602</td>
+<td>8614</td>
+<td>8626</td>
+<td>8638</td>
+<td>8650</td>
+<td>8662</td>
+<td>8674</td>
+<td>8686</td>
+<td>...</td>
+<td>8962</td>
+<td>8974</td>
+<td>8986</td>
+<td>8998</td>
+<td>9010</td>
+<td>9022</td>
+<td>9034</td>
+<td>9046</td>
+<td>9058</td>
+<td>9070</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">December</th>
+<td>8579</td>
+<td>8591</td>
+<td>8603</td>
+<td>8615</td>
+<td>8627</td>
+<td>8639</td>
+<td>8651</td>
+<td>8663</td>
+<td>8675</td>
+<td>8687</td>
+<td>...</td>
+<td>8963</td>
+<td>8975</td>
+<td>8987</td>
+<td>8999</td>
+<td>9011</td>
+<td>9023</td>
+<td>9035</td>
+<td>9047</td>
+<td>9059</td>
+<td>9071</td>
+</tr>
+</tbody>
+</table>
+
+<p>12 rows × 42 columns</p>
+</div>
+</div>
+</div>
+<p>From here, we establish a target latitude &amp; longitude, under which we query specific time/variable slices and identify to the associated coordinate. TS (Earth Skin Temperature) is analyzed below temporally.</p>
+<div id="cell-19" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lon <span class="op">=</span> <span class="op">-</span><span class="dv">41</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> arcgis.raster.ImageryLayer(url)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>tempdata <span class="op">=</span> {}</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    sliceId <span class="op">=</span>row[<span class="dv">0</span>]</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> layer.identify(geometry<span class="op">=</span>{<span class="st">"x"</span>:lon,<span class="st">"y"</span>:lat},slice_id<span class="op">=</span>sliceId)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    result_C <span class="op">=</span> <span class="bu">float</span>(result[<span class="st">'value'</span>])<span class="op">-</span><span class="fl">273.15</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    tempdata[sliceId] <span class="op">=</span> <span class="bu">round</span>(result_C,<span class="dv">3</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Temp (C)'</span>] <span class="op">=</span> tempdata.values()</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>display(tempdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<pre><code>{8568: 20.061,
+ 8569: 19.014,
+ 8570: 18.795,
+ 8571: 18.577,
+ 8572: 20.327,
+ 8573: 22.803,
+ 8574: 24.553,
+ 8575: 25.272,
+ 8576: 25.186,
+ 8577: 23.975,
+ 8578: 21.756,
+ 8579: 20.78,
+ 8580: 18.467,
+ 8581: 18.155,
+ 8582: 18.577,
+ 8583: 18.467,
+ 8584: 20.655,
+ 8585: 22.709,
+ 8586: 24.616,
+ 8587: 25.42,
+ 8588: 25.061,
+ 8589: 24.616,
+ 8590: 22.186,
+ 8591: 20.717,
+ 8592: 19.452,
+ 8593: 18.655,
+ 8594: 18.491,
+ 8595: 18.944,
+ 8596: 20.288,
+ 8597: 22.288,
+ 8598: 24.381,
+ 8599: 25.303,
+ 8600: 25.467,
+ 8601: 23.616,
+ 8602: 21.631,
+ 8603: 19.678,
+ 8604: 19.366,
+ 8605: 18.491,
+ 8606: 18.319,
+ 8607: 19.194,
+ 8608: 19.811,
+ 8609: 22.014,
+ 8610: 23.944,
+ 8611: 24.866,
+ 8612: 24.866,
+ 8613: 24.17,
+ 8614: 22.803,
+ 8615: 20.936,
+ 8616: 20.162,
+ 8617: 18.28,
+ 8618: 19.217,
+ 8619: 19.108,
+ 8620: 20.881,
+ 8621: 22.522,
+ 8622: 24.561,
+ 8623: 25.538,
+ 8624: 25.131,
+ 8625: 22.67,
+ 8626: 20.538,
+ 8627: 19.217,
+ 8628: 19.045,
+ 8629: 18.873,
+ 8630: 19.053,
+ 8631: 19.334,
+ 8632: 21.178,
+ 8633: 23.116,
+ 8634: 25.592,
+ 8635: 26.123,
+ 8636: 25.139,
+ 8637: 23.694,
+ 8638: 21.983,
+ 8639: 20.373,
+ 8640: 18.897,
+ 8641: 18.952,
+ 8642: 18.819,
+ 8643: 18.959,
+ 8644: 19.498,
+ 8645: 22.186,
+ 8646: 24.373,
+ 8647: 25.78,
+ 8648: 25.42,
+ 8649: 23.655,
+ 8650: 21.319,
+ 8651: 20.225,
+ 8652: 19.233,
+ 8653: 18.428,
+ 8654: 18.436,
+ 8655: 19.038,
+ 8656: 20.459,
+ 8657: 22.475,
+ 8658: 24.647,
+ 8659: 26.389,
+ 8660: 25.881,
+ 8661: 24.553,
+ 8662: 22.061,
+ 8663: 19.944,
+ 8664: 18.475,
+ 8665: 18.975,
+ 8666: 19.108,
+ 8667: 20.014,
+ 8668: 20.639,
+ 8669: 22.975,
+ 8670: 25.014,
+ 8671: 25.897,
+ 8672: 25.327,
+ 8673: 24.03,
+ 8674: 22.327,
+ 8675: 21.1,
+ 8676: 19.725,
+ 8677: 18.295,
+ 8678: 18.28,
+ 8679: 18.78,
+ 8680: 19.475,
+ 8681: 22.475,
+ 8682: 25.022,
+ 8683: 25.389,
+ 8684: 25.459,
+ 8685: 23.928,
+ 8686: 22.28,
+ 8687: 20.592,
+ 8688: 19.358,
+ 8689: 19.592,
+ 8690: 19.334,
+ 8691: 19.1,
+ 8692: 20.334,
+ 8693: 23.483,
+ 8694: 25.725,
+ 8695: 26.819,
+ 8696: 25.819,
+ 8697: 23.975,
+ 8698: 21.842,
+ 8699: 20.452,
+ 8700: 18.584,
+ 8701: 19.092,
+ 8702: 18.944,
+ 8703: 19.686,
+ 8704: 20.131,
+ 8705: 22.155,
+ 8706: 24.6,
+ 8707: 26.069,
+ 8708: 25.514,
+ 8709: 23.35,
+ 8710: 21.412,
+ 8711: 20.561,
+ 8712: 18.709,
+ 8713: 18.662,
+ 8714: 18.366,
+ 8715: 19.467,
+ 8716: 20.092,
+ 8717: 22.811,
+ 8718: 24.795,
+ 8719: 25.717,
+ 8720: 25.616,
+ 8721: 23.709,
+ 8722: 21.811,
+ 8723: 20.459,
+ 8724: 19.303,
+ 8725: 18.569,
+ 8726: 19.233,
+ 8727: 19.123,
+ 8728: 20.67,
+ 8729: 22.725,
+ 8730: 24.202,
+ 8731: 25.827,
+ 8732: 25.944,
+ 8733: 24.725,
+ 8734: 22.053,
+ 8735: 20.912,
+ 8736: 20.288,
+ 8737: 19.858,
+ 8738: 19.967,
+ 8739: 19.53,
+ 8740: 20.811,
+ 8741: 21.85,
+ 8742: 23.834,
+ 8743: 25.756,
+ 8744: 25.327,
+ 8745: 23.108,
+ 8746: 21.155,
+ 8747: 20.217,
+ 8748: 18.334,
+ 8749: 18.358,
+ 8750: 18.1,
+ 8751: 18.92,
+ 8752: 19.577,
+ 8753: 21.717,
+ 8754: 23.655,
+ 8755: 25.288,
+ 8756: 25.85,
+ 8757: 24.741,
+ 8758: 23.069,
+ 8759: 20.475,
+ 8760: 18.819,
+ 8761: 18.03,
+ 8762: 17.983,
+ 8763: 18.514,
+ 8764: 19.623,
+ 8765: 21.873,
+ 8766: 24.842,
+ 8767: 26.209,
+ 8768: 25.647,
+ 8769: 23.655,
+ 8770: 21.795,
+ 8771: 20.686,
+ 8772: 18.655,
+ 8773: 17.67,
+ 8774: 18.03,
+ 8775: 19.358,
+ 8776: 20.741,
+ 8777: 22.795,
+ 8778: 24.608,
+ 8779: 25.983,
+ 8780: 26.553,
+ 8781: 24.764,
+ 8782: 23.327,
+ 8783: 20.889,
+ 8784: 19.788,
+ 8785: 18.866,
+ 8786: 19.397,
+ 8787: 20.162,
+ 8788: 21.045,
+ 8789: 22.358,
+ 8790: 25.123,
+ 8791: 26.42,
+ 8792: 26.209,
+ 8793: 24.858,
+ 8794: 22.444,
+ 8795: 21.366,
+ 8796: 19.678,
+ 8797: 19.584,
+ 8798: 18.967,
+ 8799: 19.264,
+ 8800: 21.405,
+ 8801: 23.092,
+ 8802: 24.866,
+ 8803: 25.506,
+ 8804: 25.702,
+ 8805: 25.014,
+ 8806: 23.319,
+ 8807: 20.834,
+ 8808: 20.209,
+ 8809: 18.545,
+ 8810: 18.608,
+ 8811: 19.397,
+ 8812: 20.467,
+ 8813: 22.022,
+ 8814: 24.584,
+ 8815: 26.366,
+ 8816: 25.366,
+ 8817: 24.061,
+ 8818: 22.702,
+ 8819: 19.733,
+ 8820: 18.811,
+ 8821: 19.053,
+ 8822: 17.795,
+ 8823: 19.069,
+ 8824: 21.038,
+ 8825: 22.694,
+ 8826: 24.186,
+ 8827: 25.28,
+ 8828: 25.334,
+ 8829: 23.842,
+ 8830: 22.334,
+ 8831: 20.881,
+ 8832: 20.092,
+ 8833: 19.569,
+ 8834: 18.662,
+ 8835: 18.381,
+ 8836: 20.827,
+ 8837: 23.303,
+ 8838: 25.717,
+ 8839: 26.28,
+ 8840: 25.295,
+ 8841: 23.381,
+ 8842: 22.084,
+ 8843: 20.725,
+ 8844: 20.092,
+ 8845: 17.998,
+ 8846: 18.788,
+ 8847: 19.108,
+ 8848: 19.788,
+ 8849: 22.584,
+ 8850: 24.319,
+ 8851: 25.623,
+ 8852: 25.381,
+ 8853: 23.936,
+ 8854: 22.288,
+ 8855: 21.217,
+ 8856: 19.912,
+ 8857: 19.592,
+ 8858: 18.522,
+ 8859: 19.186,
+ 8860: 19.936,
+ 8861: 22.319,
+ 8862: 24.358,
+ 8863: 25.655,
+ 8864: 25.483,
+ 8865: 24.1,
+ 8866: 22.686,
+ 8867: 20.631,
+ 8868: 19.639,
+ 8869: 19.35,
+ 8870: 19.506,
+ 8871: 19.014,
+ 8872: 20.452,
+ 8873: 21.514,
+ 8874: 23.748,
+ 8875: 25.639,
+ 8876: 25.256,
+ 8877: 23.998,
+ 8878: 21.561,
+ 8879: 19.912,
+ 8880: 19.084,
+ 8881: 19.428,
+ 8882: 19.764,
+ 8883: 19.709,
+ 8884: 21.577,
+ 8885: 22.983,
+ 8886: 24.741,
+ 8887: 25.483,
+ 8888: 25.225,
+ 8889: 23.694,
+ 8890: 21.748,
+ 8891: 20.873,
+ 8892: 19.584,
+ 8893: 18.498,
+ 8894: 18.803,
+ 8895: 19.084,
+ 8896: 21.295,
+ 8897: 22.811,
+ 8898: 24.53,
+ 8899: 26.178,
+ 8900: 25.873,
+ 8901: 24.827,
+ 8902: 22.358,
+ 8903: 20.592,
+ 8904: 20.053,
+ 8905: 18.803,
+ 8906: 19.17,
+ 8907: 19.756,
+ 8908: 20.577,
+ 8909: 22.92,
+ 8910: 24.858,
+ 8911: 26.17,
+ 8912: 25.647,
+ 8913: 23.78,
+ 8914: 22.178,
+ 8915: 19.873,
+ 8916: 18.764,
+ 8917: 17.983,
+ 8918: 17.748,
+ 8919: 18.795,
+ 8920: 20.038,
+ 8921: 22.631,
+ 8922: 25.116,
+ 8923: 26.03,
+ 8924: 25.459,
+ 8925: 24.467,
+ 8926: 22.592,
+ 8927: 19.662,
+ 8928: 18.912,
+ 8929: 19.006,
+ 8930: 18.35,
+ 8931: 18.123,
+ 8932: 20.202,
+ 8933: 22.788,
+ 8934: 24.381,
+ 8935: 25.412,
+ 8936: 25.647,
+ 8937: 23.67,
+ 8938: 21.647,
+ 8939: 21.123,
+ 8940: 19.366,
+ 8941: 19.077,
+ 8942: 18.538,
+ 8943: 19.756,
+ 8944: 19.858,
+ 8945: 23.209,
+ 8946: 24.202,
+ 8947: 26.295,
+ 8948: 25.139,
+ 8949: 23.272,
+ 8950: 21.741,
+ 8951: 20.209,
+ 8952: 19.256,
+ 8953: 18.631,
+ 8954: 18.662,
+ 8955: 18.069,
+ 8956: 19.53,
+ 8957: 22.233,
+ 8958: 24.912,
+ 8959: 25.858,
+ 8960: 25.756,
+ 8961: 24.139,
+ 8962: 23.1,
+ 8963: 20.553,
+ 8964: 19.741,
+ 8965: 19.405,
+ 8966: 19.741,
+ 8967: 19.038,
+ 8968: 20.631,
+ 8969: 22.788,
+ 8970: 24.631,
+ 8971: 26.241,
+ 8972: 25.483,
+ 8973: 24.17,
+ 8974: 22.264,
+ 8975: 21.045,
+ 8976: 19.897,
+ 8977: 19.444,
+ 8978: 19.639,
+ 8979: 19.428,
+ 8980: 20.256,
+ 8981: 22.959,
+ 8982: 25.389,
+ 8983: 25.834,
+ 8984: 25.498,
+ 8985: 24.03,
+ 8986: 22.577,
+ 8987: 20.077,
+ 8988: 19.866,
+ 8989: 19.303,
+ 8990: 19.139,
+ 8991: 19.303,
+ 8992: 20.944,
+ 8993: 22.85,
+ 8994: 24.452,
+ 8995: 25.694,
+ 8996: 25.444,
+ 8997: 24.061,
+ 8998: 22.897,
+ 8999: 20.803,
+ 9000: 19.381,
+ 9001: 19.842,
+ 9002: 18.912,
+ 9003: 19.397,
+ 9004: 19.725,
+ 9005: 22.334,
+ 9006: 24.538,
+ 9007: 26.42,
+ 9008: 25.569,
+ 9009: 23.639,
+ 9010: 22.116,
+ 9011: 21.17,
+ 9012: 20.155,
+ 9013: 18.764,
+ 9014: 19.592,
+ 9015: 19.35,
+ 9016: 21.256,
+ 9017: 23.78,
+ 9018: 24.436,
+ 9019: 25.389,
+ 9020: 25.561,
+ 9021: 23.975,
+ 9022: 22.538,
+ 9023: 20.748,
+ 9024: 19.397,
+ 9025: 18.905,
+ 9026: 19.584,
+ 9027: 19.498,
+ 9028: 20.709,
+ 9029: 22.881,
+ 9030: 25.334,
+ 9031: 26.491,
+ 9032: 26.225,
+ 9033: 23.717,
+ 9034: 22.514,
+ 9035: 21.225,
+ 9036: 19.967,
+ 9037: 19.397,
+ 9038: 19.397,
+ 9039: 19.975,
+ 9040: 20.686,
+ 9041: 21.936,
+ 9042: 24.655,
+ 9043: 26.811,
+ 9044: 25.889,
+ 9045: 24.342,
+ 9046: 22.538,
+ 9047: 21.342,
+ 9048: 20.944,
+ 9049: 18.912,
+ 9050: 18.866,
+ 9051: 19.444,
+ 9052: 21.866,
+ 9053: 22.889,
+ 9054: 24.975,
+ 9055: 25.889,
+ 9056: 25.694,
+ 9057: 24.647,
+ 9058: 22.491,
+ 9059: 20.756,
+ 9060: 18.569,
+ 9061: 18.522,
+ 9062: 18.998,
+ 9063: 19.131,
+ 9064: 20.319,
+ 9065: 22.873,
+ 9066: 24.186,
+ 9067: 26.116,
+ 9068: 26.295,
+ 9069: 24.647,
+ 9070: 23.139,
+ 9071: 20.772}</code></pre>
+</div>
+</div>
+<p>We will now extract March to July data into separate series to be plotted:</p>
+<div id="cell-21" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>xpoints <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(df[<span class="st">'Year'</span>].tolist()))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ind,monthname <span class="kw">in</span> <span class="bu">enumerate</span>(months[<span class="dv">2</span>:<span class="dv">6</span>],<span class="dv">3</span>):</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(xpoints,df[df[<span class="st">'Month'</span>]<span class="op">==</span>ind][<span class="st">'Temp (C)'</span>],label<span class="op">=</span>monthname)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="getting-started-arcgis_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
