@@ -3,19 +3,90 @@ project:
   output-dir: docs
 
 website:
-  title: "kleb-web"
-  navbar:
-    left:
+  page-navigation: true
+  title: "Earthdata GIS"
+  repo-url: "https://github.com/eosdis-nasa/earthdata-gis"
+  repo-actions: [edit, issue]
+  
+  page-footer: 
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "&copy: NASA EGIS, 2024"
+
+  sidebar:
+    logo: "images/EGIS-logo.png"
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://gis.earthdata.nasa.gov/portal/home/index.html
+        text: "Earthdata GIS"
+      - icon: github
+        href: https://github.com/eosdis-nasa/earthdata-gis
+        text: "Tutorials and KLEB Repo"        
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
       - href: index.qmd
-        text: Home
+        text: Welcome
+      - about.qmd
+      - section: kleb-project/index.qmd
+        title: Overview and Guidance
+        contents: 
+          - section: kleb-project/egis-limitations/index.qmd
+            title: Known Limitations
+            contents:
+              - kleb-project/egis-limitations/no_download.qmd
+              - kleb-project/egis-limitations/active_dev.qmd
+              - kleb-project/egis-limitations/authentication.qmd
+              - kleb-project/egis-limitations/service_capability.qmd
+          - section: kleb-project/services/index.qmd
+            title: Services
+            contents:
+              - kleb-project/services/map_services.qmd
+              - kleb-project/services/feature_services.qmd
+              - kleb-project/services/image_services.qmd
+              - kleb-project/services/ogc_services.qmd
+              - kleb-project/services/announcements.qmd
+          - section: kleb-project/behaviors/index.qmd
+            title: Behaviors
+            contents:
+              - kleb-project/behaviors/endpoints.qmd
+              - kleb-project/behaviors/pop_up.qmd
+              - kleb-project/behaviors/versioning.qmd
+              - kleb-project/behaviors/web_vs_desktop.qmd
+          - section: kleb-project/tools/index.qmd
+            title: Tools
+            contents:
+              - kleb-project/tools/appbuilder.qmd
+              - kleb-project/tools/experience_builder.qmd
+              - kleb-project/tools/third_party.qmd
+              - kleb-project/tools/dashboards.qmd
+          - href: kleb-project/standards/index.qmd
+            text: Standards
+          - section: kleb-project/resources/index.qmd
+            title: Resources
+            contents:
+              - kleb-project/resources/how_to.qmd
+              - kleb-project/resources/external_resources.qmd
+      - href: tutorials/index.qmd
+        text: EGIS Tutorials
+      - href: kleb-project/tracker/index.qmd
+        text: Release Tracker
 
 format:
   html:
-    theme:
+    theme: 
       - cosmo
       - brand
-    css: styles.css
+    code-copy: true
+    code-overflow: wrap
     toc: true
 
+
+filters:
+  - include-files.lua
+  - quarto
 
 

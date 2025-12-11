@@ -4,42 +4,11 @@ subtitle: "This document summarizes specific use cases and procedures for using 
 format: html
 ---
 
-<div class="page-with-left-sidebar">
-<div class="left-sidebar">
-::: {.left-sidebar-content}
-<details open>
-<summary>Navigation</summary>
-
-- [Welcome](#welcome)
-- **Overview & Guidance**
-	- [Purpose of the Documentation Hub](/kleb-project/index.html)
-	- [How to Use This Resource](/kleb-project/index.html)
-- **EGIS Limitations**
-	- [No Download](/kleb-project/egis-limitations/index.html)
-	- [Active Development](/kleb-project/egis-limitations/index.html)
-	- [Authentication](/kleb-project/egis-limitations/index.html)
-	- [Image Service Capability Index](/kleb-project/egis-limitations/index.html)
-- **Services**
-	- [Map Services](/kleb-project/services/index.html)
-	- [Feature Services](/kleb-project/services/index.html)
-	- [Image Services](/kleb-project/services/index.html)
-	- [OGC Services](/kleb-project/services/index.html)
-- **Product & Platform Behavior**
-	- [Web vs Desktop](/kleb-project/behaviors/index.html)
-	- [Pop-Ups](/kleb-project/behaviors/index.html)
-	- [Version-Specific Behavior](/kleb-project/behaviors/index.html)
-	- [OGC vs COTS Endpoints](/kleb-project/behaviors/index.html)
-
-</details>
-:::
-</div>
-
-<div class="main-content">
-
 ## Welcome {#welcome}
 
 These docs help you use the services provided by the Earthdata Search Platform and NASA's CMR STAC. Its purpose is to be a resource for interacting with NASA data and provide use cases as well as behaviors in ArcGIS Pro and open-source data. 
 
+## Known Limitations and Expected Behaviors {#kleb}
 :::: {layout="[0.25, 0.25, 0.25, 0.25]"}
 
 :::{#firstcol}

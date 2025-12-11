@@ -1,0 +1,5 @@
+---
+title: "API Endpoints"
+---
+
+OGC vs COTS Endpoints
