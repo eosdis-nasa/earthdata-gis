@@ -150,11 +150,16 @@
     ]
   },
   {
-    "objectID": "kleb-project/egis-limitations/service_capabilty.html",
-    "href": "kleb-project/egis-limitations/service_capabilty.html",
-    "title": "Active Development",
+    "objectID": "kleb-project/egis-limitations/service_capability.html",
+    "href": "kleb-project/egis-limitations/service_capability.html",
+    "title": "Service Capabilites",
     "section": "",
-    "text": "Active Development Efforts"
+    "text": "Image Service Capability Index",
+    "crumbs": [
+      "The KLEB project",
+      "EGIS Limitations",
+      "Service Capabilites"
+    ]
   },
   {
     "objectID": "kleb-project/egis-limitations/index.html",
@@ -301,13 +306,13 @@
   {
     "objectID": "kleb-project/egis-limitations/authentication.html",
     "href": "kleb-project/egis-limitations/authentication.html",
-    "title": "Active Development",
+    "title": "Authentication",
     "section": "",
-    "text": "Active Development Efforts",
+    "text": "Authentication issues",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
-      "Active Development"
+      "Authentication"
     ]
   },
   {
