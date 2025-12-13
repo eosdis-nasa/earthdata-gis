@@ -352,7 +352,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Service Content</p>
+<p>Description: Feature services allow access to individual vector features and their attributes. Designed to be interactive, they support querying, editing, and syncing of geographic features and are commonly used in web maps and apps. Uses client-side rendering, meaning the feature geometries and attributes are downloaded to the client (e.g., web browser, ArcGIS Pro), and the client applies symbology locally. Best for editable, transactional, or analytical workflows. Preferred by Esri for Living Atlas Nominations.</p>
+<table class="caption-top table">
+<caption>Basic Capabilities</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Feature Service (Web Feature Layer)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data Type</td>
+<td>Vector and tables</td>
+</tr>
+<tr class="even">
+<td>Editing Support</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Rendering</td>
+<td>Client-side rendering (symbology configurable per client)</td>
+</tr>
+<tr class="even">
+<td>Performance</td>
+<td>Optimized for editing operations and small to medium datasets</td>
+</tr>
+<tr class="odd">
+<td>Storage</td>
+<td>Hosted (copied) or references registered enterprise data</td>
+</tr>
+<tr class="even">
+<td>Caching</td>
+<td>No - renders on demand</td>
+</tr>
+<tr class="odd">
+<td>Symbolization</td>
+<td>Stored with the layer and applied on the client; can be restyled interactively</td>
+</tr>
+<tr class="even">
+<td>OGC Compliance</td>
+<td>Supports publishing as WFS (if data is copied)</td>
+</tr>
+<tr class="odd">
+<td>Export Options</td>
+<td>Full vector and table export supported; File Geodatabase (.gdb.zip), Shapefile (.zip), CSV (.csv), GeoJSON (.geojson), Feature Collection (.json), KML (.kmz), and Excel (.xlsx)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>Technical Capabilities</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Environment</th>
+<th>Feature Service (Web Feature Layer)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Web Analysis Tools (ArcGIS Online / ArcGIS Enterprise Map Viewer)</td>
+<td>Fully supported in standard web analysis tools (Buffer, Overlay Layers, Summarize Within, Dissolve Boundaries, Calculate Field, etc.). Users can run analysis directly in the browser since vector features are accessible.</td>
+</tr>
+<tr class="even">
+<td>ArcGIS Pro Geoprocessing Tools</td>
+<td>Fully supported in most geoprocessing tools (Select by Location, Clip, Intersect, Spatial Join, etc.). ArcGIS Pro accesses features through REST and processes them as vector inputs.</td>
+</tr>
+<tr class="odd">
+<td>Python (ArcPy or ArcGIS API for Python)</td>
+<td>LFully compatible. The ArcGIS API for Python and ArcPy can query, filter, edit, and analyze features directly (FeatureLayer.query, SpatialDataFrame, etc. workflows).</td>
+</tr>
+<tr class="even">
+<td>Server-side Analysis (Geoprocessing Services)</td>
+<td>Fully supported - Can be used as both input and output in server-based geoprocessing models and analysis tools. Outputs can be written back to new hosted feature layers or tables.</td>
+</tr>
+<tr class="odd">
+<td>Querying</td>
+<td>Fully supported</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -773,7 +859,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>&amp;copy: NASA EGIS, 2024</p>
+<p>NASA EGIS, 2025</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

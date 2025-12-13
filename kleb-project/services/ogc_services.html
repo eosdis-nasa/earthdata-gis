@@ -352,7 +352,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Service Content</p>
+<p>Description: OThe Open Geospatial Consortium (OGC) is an international voluntary consensus standards organization. The mission of the OGC is to develop, approve, and maintain standards for making maps and related geographic data available and shareable over the web. Using OGC services and encodings enables open access to geographic data and software functionality, allowing organizations to incorporate their GIS data and services into any app on a variety of computing and mobile devices. These open services and encodings help improve the sharing and interoperability of geospatial information.</p>
+<table class="caption-top table">
+<caption>Service Type Capabilities</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 25%">
+<col style="width: 22%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Service Type</th>
+<th>Full Name</th>
+<th>Primary Purpose</th>
+<th>Output Format</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>WMS</td>
+<td>Web Map Service</td>
+<td>Provides dynamically rendered map images generated on the server from vector or raster data. Allows clients to request specific layers, apply styles, and control symbology, extent, and format on the fly. Map request are drawn in real time.</td>
+<td>Rendered map images (PNG, JPEG, GIF, TIFF, BMP, SVG, SVG+xml, image/bil)</td>
+<td>For live, styled maps that respond to layer visibility, symbology, or temporal filters (ex. viewing weather patterns, satellite mosaics, or real-time operational data). Ideal for interoperable map visualization across different GIS clients.</td>
+</tr>
+<tr class="even">
+<td>WMTS</td>
+<td>Web Map Tile Service</td>
+<td>Provides cached map tiles that conform to the WMS standard but are pre-rendered and stored in a tile cache. Optimized for performance, delivering tiles rapidly instead of drawing dynamically for each request; improves speed and scalability for high-demand basemap or imagery layers.</td>
+<td>Pre-rendered image tiles (PNG, JPEG, GIF, TIFF, BMP)</td>
+<td>For fast, scalable basemap delivery like large imagery or topographic maps where data doesn’t change frequently. Ideal for web map backdrops or mobile apps that require quick, seamless panning and zooming.</td>
+</tr>
+<tr class="odd">
+<td>WFS</td>
+<td>Web Feature Service</td>
+<td>Provides access to the underlying vector features and attributes (not just images). Clients can query, filter, and retrieve the actual geometries and attribute data for analysis, editing, or integration; can enable both read and transactional operations depending on the configuration.</td>
+<td>Feature geometries and attributes (GML2, GML3, GeoJSON, KML, Shapefile, CSV, application/json, application/vnd.geo+json)</td>
+<td>For data-level access for analysis or editing (ex. performing spatial queries, overlay analysis, or downloading vector datasets for modeling). Ideal for analytical workflows or apps that need interoperable, editable vector data.</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>Technical Capabilities</caption>
+<colgroup>
+<col style="width: 62%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability (Esri Context)</th>
+<th>WMS</th>
+<th>WMTS</th>
+<th>WFS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OGC Specification Version</td>
+<td>1.0.0 – 1.3.0</td>
+<td>1.0.0</td>
+<td>1.0.0 – 2.0</td>
+</tr>
+<tr class="even">
+<td>Supported Operations</td>
+<td>Required for compliance: GetCapabilities, GetMap Optional: GetFeatureInfo, GetLegendGraphic, GetStyles, GetSchemaExtension</td>
+<td>Required for compliance: GetCapabilities, GetTile Optional: GetFeatureInfo</td>
+<td>Required for compliance: GetCapabilities, DescribeFeatureType, GetFeature Optional: Transaction, LockFeature , GetPropertyValue</td>
+</tr>
+<tr class="odd">
+<td>Time / Elevation Support</td>
+<td>Supports Time and Elevation parameters</td>
+<td>Supports Time and Elevation parameters IF cached as dimension</td>
+<td>Supports temporal and spatial filters</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -773,7 +852,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>&amp;copy: NASA EGIS, 2024</p>
+<p>NASA EGIS, 2025</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

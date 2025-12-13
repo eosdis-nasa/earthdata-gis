@@ -96,7 +96,7 @@
     "href": "kleb-project/services/ogc_services.html",
     "title": "OGC Services",
     "section": "",
-    "text": "Service Content",
+    "text": "Description: OThe Open Geospatial Consortium (OGC) is an international voluntary consensus standards organization. The mission of the OGC is to develop, approve, and maintain standards for making maps and related geographic data available and shareable over the web. Using OGC services and encodings enables open access to geographic data and software functionality, allowing organizations to incorporate their GIS data and services into any app on a variety of computing and mobile devices. These open services and encodings help improve the sharing and interoperability of geospatial information.\n\nService Type Capabilities\n\n\n\n\n\n\n\n\n\nService Type\nFull Name\nPrimary Purpose\nOutput Format\nUse Case\n\n\n\n\nWMS\nWeb Map Service\nProvides dynamically rendered map images generated on the server from vector or raster data. Allows clients to request specific layers, apply styles, and control symbology, extent, and format on the fly. Map request are drawn in real time.\nRendered map images (PNG, JPEG, GIF, TIFF, BMP, SVG, SVG+xml, image/bil)\nFor live, styled maps that respond to layer visibility, symbology, or temporal filters (ex. viewing weather patterns, satellite mosaics, or real-time operational data). Ideal for interoperable map visualization across different GIS clients.\n\n\nWMTS\nWeb Map Tile Service\nProvides cached map tiles that conform to the WMS standard but are pre-rendered and stored in a tile cache. Optimized for performance, delivering tiles rapidly instead of drawing dynamically for each request; improves speed and scalability for high-demand basemap or imagery layers.\nPre-rendered image tiles (PNG, JPEG, GIF, TIFF, BMP)\nFor fast, scalable basemap delivery like large imagery or topographic maps where data doesn’t change frequently. Ideal for web map backdrops or mobile apps that require quick, seamless panning and zooming.\n\n\nWFS\nWeb Feature Service\nProvides access to the underlying vector features and attributes (not just images). Clients can query, filter, and retrieve the actual geometries and attribute data for analysis, editing, or integration; can enable both read and transactional operations depending on the configuration.\nFeature geometries and attributes (GML2, GML3, GeoJSON, KML, Shapefile, CSV, application/json, application/vnd.geo+json)\nFor data-level access for analysis or editing (ex. performing spatial queries, overlay analysis, or downloading vector datasets for modeling). Ideal for analytical workflows or apps that need interoperable, editable vector data.\n\n\n\n\nTechnical Capabilities\n\n\n\n\n\n\n\n\nCapability (Esri Context)\nWMS\nWMTS\nWFS\n\n\n\n\nOGC Specification Version\n1.0.0 – 1.3.0\n1.0.0\n1.0.0 – 2.0\n\n\nSupported Operations\nRequired for compliance: GetCapabilities, GetMap Optional: GetFeatureInfo, GetLegendGraphic, GetStyles, GetSchemaExtension\nRequired for compliance: GetCapabilities, GetTile Optional: GetFeatureInfo\nRequired for compliance: GetCapabilities, DescribeFeatureType, GetFeature Optional: Transaction, LockFeature , GetPropertyValue\n\n\nTime / Elevation Support\nSupports Time and Elevation parameters\nSupports Time and Elevation parameters IF cached as dimension\nSupports temporal and spatial filters",
     "crumbs": [
       "The KLEB project",
       "Services",
@@ -119,7 +119,7 @@
     "href": "kleb-project/services/feature_services.html",
     "title": "Feature Services",
     "section": "",
-    "text": "Service Content",
+    "text": "Description: Feature services allow access to individual vector features and their attributes. Designed to be interactive, they support querying, editing, and syncing of geographic features and are commonly used in web maps and apps. Uses client-side rendering, meaning the feature geometries and attributes are downloaded to the client (e.g., web browser, ArcGIS Pro), and the client applies symbology locally. Best for editable, transactional, or analytical workflows. Preferred by Esri for Living Atlas Nominations.\n\nBasic Capabilities\n\n\n\n\n\n\nCapability\nFeature Service (Web Feature Layer)\n\n\n\n\nData Type\nVector and tables\n\n\nEditing Support\nYes\n\n\nRendering\nClient-side rendering (symbology configurable per client)\n\n\nPerformance\nOptimized for editing operations and small to medium datasets\n\n\nStorage\nHosted (copied) or references registered enterprise data\n\n\nCaching\nNo - renders on demand\n\n\nSymbolization\nStored with the layer and applied on the client; can be restyled interactively\n\n\nOGC Compliance\nSupports publishing as WFS (if data is copied)\n\n\nExport Options\nFull vector and table export supported; File Geodatabase (.gdb.zip), Shapefile (.zip), CSV (.csv), GeoJSON (.geojson), Feature Collection (.json), KML (.kmz), and Excel (.xlsx)\n\n\n\n\nTechnical Capabilities\n\n\n\n\n\n\nEnvironment\nFeature Service (Web Feature Layer)\n\n\n\n\nWeb Analysis Tools (ArcGIS Online / ArcGIS Enterprise Map Viewer)\nFully supported in standard web analysis tools (Buffer, Overlay Layers, Summarize Within, Dissolve Boundaries, Calculate Field, etc.). Users can run analysis directly in the browser since vector features are accessible.\n\n\nArcGIS Pro Geoprocessing Tools\nFully supported in most geoprocessing tools (Select by Location, Clip, Intersect, Spatial Join, etc.). ArcGIS Pro accesses features through REST and processes them as vector inputs.\n\n\nPython (ArcPy or ArcGIS API for Python)\nLFully compatible. The ArcGIS API for Python and ArcPy can query, filter, edit, and analyze features directly (FeatureLayer.query, SpatialDataFrame, etc. workflows).\n\n\nServer-side Analysis (Geoprocessing Services)\nFully supported - Can be used as both input and output in server-based geoprocessing models and analysis tools. Outputs can be written back to new hosted feature layers or tables.\n\n\nQuerying\nFully supported",
     "crumbs": [
       "The KLEB project",
       "Services",
@@ -154,7 +154,7 @@
     "href": "kleb-project/egis-limitations/service_capability.html",
     "title": "Service Capabilites",
     "section": "",
-    "text": "Image Service Capability Index",
+    "text": "Image Service Capability Index\n\n\nDescription: Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -177,7 +177,7 @@
     "href": "kleb-project/egis-limitations/active_dev.html",
     "title": "Active Development",
     "section": "",
-    "text": "Active Development Efforts",
+    "text": "Description: EGIS is regularly onboarding collections and publishing new services, please visit the Gallery to see the full list of publicly available content. NASA’s Earth observations include ~50,000 collections of over 100 petabytes of data, it is important to note that EGIS does not currently provide geospatial services for the complete repository.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -308,7 +308,7 @@
     "href": "kleb-project/egis-limitations/authentication.html",
     "title": "Authentication",
     "section": "",
-    "text": "Authentication issues",
+    "text": "EGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -320,7 +320,7 @@
     "href": "kleb-project/egis-limitations/no_download.html",
     "title": "No Download",
     "section": "",
-    "text": "EGIS Limitations",
+    "text": "Description: At this time, EGIS services do NOT offer users the ability to download raw data. The ArcGIS Image Services provide Analysis-Ready-Data as a service, allowing users to perform functions and analytics to the underlying data without requiring the download of files. To access to the full NASA Earth observation repository for data download, please visit Earthdata Search.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -374,7 +374,7 @@
     "href": "kleb-project/services/announcements.html",
     "title": "Announcements",
     "section": "",
-    "text": "Service Content",
+    "text": "Description: Time-sensitive updates on service deployments, maintenance windows, changes in availability, or planned deprecations.",
     "crumbs": [
       "The KLEB project",
       "Services",
@@ -386,7 +386,7 @@
     "href": "kleb-project/services/image_services.html",
     "title": "Image Services",
     "section": "",
-    "text": "Service Content",
+    "text": "Description: Designed for visualization, access, and analysis of raster and imagery data such as satellite, aerial, and elevation datasets. Imagery services can draw dynamically from source data or from cached tiles for faster performance. They support raster functions, multidimensional data, mensuration, and metadata access. Best suited for analytical, visualization, and sharing workflows that require access to pixel values and raster attributes\n\nCapabilities\n\n\n\n\n\n\nCapability\nDescription\n\n\n\n\nData Type\nRaster datasets, image collections, mosaic datasets, multidimensional imagery, and elevation models.\n\n\nEditing Support\nPixel values cannot be edited directly; modifying imagery requires updating source data and republishing. Editing supports modifying service properties such as symbology, rendering rules, raster functions, and display or performance settings.\n\n\nRendering\nCan draw dynamically from data (server-side rendering) or use cached tiles.\n\n\nPerformance Optimization\nSupports browser and server-side caching, compression, and selective cache building to improve rendering performance and reduce bandwidth usage\n\n\nStorage\nCan be referenced from enterprise/data stores or copied and hosted to ArcGIS Online. Hosted imagery services are stored in ArcGIS Online’s Cloud Raster Format (CRF).\n\n\nCaching\nOptional. Supports dynamic draw, cached draw/pre-rendered tiles, new or existing caches, and multiple tiling schemes. Supports export of cache tiles for offline use.\n\n\nCompression (how pixels are stored and transmitted)\nSupports JPEG, LERC, LZ77, or none.\n\n\nSymbolization\nDefined by processing templates, default stretches, and resampling methods\n\n\nOGC Compliance\nSupports WMS (1.0–1.3) capabilities for interoperability with external GIS clients (ex. QGIS). Public sharing is required for OGC layers to function correctly.\n\n\nMensuration Tools (making geometric measurements directly from imagery)\nSupports distance, area, height, and shadow measurements depending on available source data and sensor metadata.\n\n\n\n\nTechnical Capabilities\n\n\n\n\n\n\nEnvironment\nDescription\n\n\n\n\nArcGIS Pro\nFully supported for authoring, visualization, and analysis. Users can configure rendering, compression, resampling, orthorectification, and processing templates, and can publish or overwrite imagery layers.\n\n\nWeb Map Viewers (ArcGIS Online / Enterprise)\nSupports basic interactive access to imagery services for visualization, filtering, and raster analysis. Users can apply raster functions, adjust rendering, and explore time or multidimensional data, but cannot author or publish imagery services.\n\n\nRaster Functions and Processing\nApplies raster functions and templates for on-the-fly analysis and visualization, such as NDVI, hillshade, pan-sharpening, terrain analysis, or time-slice extraction from multidimensional data. Hosted tiled layers process imagery on the client; dynamic layers process imagery on the server.\n\n\nAnalysis Tools\nSupports raster analysis tools such as Clip, Zonal Statistics, Slope, Aspect, etc. when raster analysis privileges are enabled.\n\n\nPython (ArcPy / ArcGIS API for Python)\nFully compatible for publishing, querying pixel values, managing caches, and performing image analysis using arcgis.raster modules or ArcPy raster functions.\n\n\nServer-side Analysis (Geoprocessing Services)\nFully supported when published to ArcGIS Image Server. Enables custom geoprocessing models or Python script tools to run server-side, using imagery layers as inputs and outputs for batch or scheduled processing.\n\n\nExport Options\nSupports exporting to TIFF, JPEG, PNG, or other raster formats through REST endpoints. Clients may download cache tiles if enabled.",
     "crumbs": [
       "The KLEB project",
       "Services",
@@ -398,7 +398,7 @@
     "href": "kleb-project/services/map_services.html",
     "title": "Map Services",
     "section": "",
-    "text": "Service Content",
+    "text": "Description: Designed for fast map visualization and rendering of layers, including both vector and raster data. Uses server-side rendering, meaning the server draws the map and sends pre-rendered images (map tiles or dynamic map images) to the client, which displays them without local restyling. Supports querying and visualization, but not editing. Can be dynamic (drawn on-the-fly) or cached (tiled) for high performance. Ideal for large-scale visualization, analysis layers, and read-only data delivery.\n\nBasic Capabilities\n\n\n\n\n\n\nCapability\nMap Service (Image Layer)\n\n\n\n\nData Type\nVector, raster sublayers, and tables\n\n\nEditing Support\nNo - read-only (can optionally include a dependent feature layer for editing)\n\n\nRendering\nServer-side rendering (authoritative symbology defined at publish)\n\n\nPerformance\nOptimized for visualization of large datasets (dynamic draw or cached tiles)\n\n\nStorage\nReferences registered data (Enterprise) or caches data to server\n\n\nCaching\nYes - Can use new or existing tile caches for faster rendering\n\n\nSymbolization\nAuthored in ArcGIS Pro and rendered server-side; fixed symbology unless dynamic workspaces are enabled\n\n\nOGC Compliance\nSupports publishing as WMS, WFS, WCS, OGC API (Features, and KML)\n\n\nExport Options\nMap image export (PNG, JPEG, PDF); limited vector exports for queries\n\n\n\n\nTechnical Capabilities\n\n\n\n\n\n\nEnvironment\nMap Service (Image Layer)\n\n\n\n\nWeb Analysis Tools (ArcGIS Online / ArcGIS Enterprise Map Viewer)\nLimited - Map image layers cannot be used directly in web analysis tools because they serve images, not features. Only the associated feature layer (if one exists) can be used in these tools.\n\n\nArcGIS Pro Geoprocessing Tools\nLimited - Only sublayers that expose query operations can be used as read-only inputs. Dynamic map layers (images) cannot serve as direct inputs for vector analysis tools.\n\n\nPython (ArcPy or ArcGIS API for Python)\nLimited. ArcPy and the ArcGIS API can only perform REST queries on sublayers with query enabled. Map image rendering (PNG/JPEG) cannot be processed in analytical workflows unless converted.\n\n\nServer-side Analysis (Geoprocessing Services)\nLimited - Can be used as input only if the service supports query operations. Outputs cannot overwrite or update a map image layer. Often used together with an associated feature layer for data-driven geoprocessing services.\n\n\nQuerying\nLimited - does not include editing and attachments",
     "crumbs": [
       "The KLEB project",
       "Services",
