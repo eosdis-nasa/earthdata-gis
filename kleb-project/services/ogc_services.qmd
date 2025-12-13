@@ -2,5 +2,20 @@
 title: "OGC Services"
 ---
 
-Service Content 
+Description: OThe Open Geospatial Consortium (OGC) is an international voluntary consensus standards organization. The mission of the OGC is to develop, approve, and maintain standards for making maps and related geographic data available and shareable over the web. Using OGC services and encodings enables open access to geographic data and software functionality, allowing organizations to incorporate their GIS data and services into any app on a variety of computing and mobile devices. These open services and encodings help improve the sharing and interoperability of geospatial information. 
 
+
+| Service Type | Full Name | Primary Purpose | Output Format | Use Case |
+|--------------|-----------|-----------------|---------------|----------|
+| WMS | Web Map Service | Provides dynamically rendered map images generated on the server from vector or raster data. Allows clients to request specific layers, apply styles, and control symbology, extent, and format on the fly. Map request are drawn in real time. | Rendered map images (PNG, JPEG, GIF, TIFF, BMP, SVG, SVG+xml, image/bil) | For live, styled maps that respond to layer visibility, symbology, or temporal filters (ex. viewing weather patterns, satellite mosaics, or real-time operational data). Ideal for interoperable map visualization across different GIS clients. |
+| WMTS | Web Map Tile Service | Provides cached map tiles that conform to the WMS standard but are pre-rendered and stored in a tile cache. Optimized for performance, delivering tiles rapidly instead of drawing dynamically for each request; improves speed and scalability for high-demand basemap or imagery layers. | Pre-rendered image tiles (PNG, JPEG, GIF, TIFF, BMP) | For fast, scalable basemap delivery like large imagery or topographic maps where data doesn’t change frequently. Ideal for web map backdrops or mobile apps that require quick, seamless panning and zooming. |
+| WFS | Web Feature Service | Provides access to the underlying vector features and attributes (not just images). Clients can query, filter, and retrieve the actual geometries and attribute data for analysis, editing, or integration; can enable both read and transactional operations depending on the configuration. | Feature geometries and attributes (GML2, GML3, GeoJSON, KML, Shapefile, CSV, application/json, application/vnd.geo+json) | For data-level access for analysis or editing (ex. performing spatial queries, overlay analysis, or downloading vector datasets for modeling). Ideal for analytical workflows or apps that need interoperable, editable vector data. |
+: Service Type Capabilities 
+
+
+| Capability (Esri Context) | WMS | WMTS | WFS | 
+|---------------------------|-----|------|-----| 
+| OGC Specification Version | 1.0.0 – 1.3.0 | 1.0.0 | 1.0.0 – 2.0 |
+| Supported Operations | Required for compliance: GetCapabilities, GetMap \n Optional: GetFeatureInfo, GetLegendGraphic, GetStyles, GetSchemaExtension | Required for compliance: GetCapabilities, GetTile \m Optional: GetFeatureInfo | Required for compliance: GetCapabilities, DescribeFeatureType, GetFeature \n Optional: Transaction, LockFeature , GetPropertyValue |
+Time / Elevation Support | Supports Time and Elevation parameters | Supports Time and Elevation parameters IF cached as dimension | Supports temporal and spatial filters |
+: Technical Capabilities

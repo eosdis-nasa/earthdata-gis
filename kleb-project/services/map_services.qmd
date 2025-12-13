@@ -2,5 +2,35 @@
 title: "Map Services"
 ---
 
-Service Content 
+Description: Designed for fast map visualization and rendering of layers, including both vector and raster data. Uses server-side rendering, meaning the server draws the map and sends pre-rendered images (map tiles or dynamic map images) to the client, which displays them without local restyling. Supports querying and visualization, but not editing. Can be dynamic (drawn on-the-fly) or cached (tiled) for high performance. Ideal for large-scale visualization, analysis layers, and read-only data delivery. 
+
+| Capability | Map Service (Image Layer)|
+|------------|--------------------------|
+| Data Type | Vector, raster sublayers, and tables |
+| Editing Support | No - read-only (can optionally include a dependent feature layer for editing) |
+| Rendering | Server-side rendering (authoritative symbology defined at publish) | 
+| Performance | Optimized for visualization of large datasets (dynamic draw or cached tiles) |
+| Storage | References registered data (Enterprise) or caches data to server |
+| Caching | Yes - Can use new or existing tile caches for faster rendering |
+| Symbolization | Authored in ArcGIS Pro and rendered server-side; fixed symbology unless dynamic workspaces are enabled |
+| OGC Compliance | Supports publishing as WMS, WFS, WCS, OGC API (Features, and KML) |
+| Export Options | Map image export (PNG, JPEG, PDF); limited vector exports for queries |
+: Basic Capabilities  {tbl-colwidths="[35,65]"}
+
+
+| Environment | Map Service (Image Layer)|
+|------------|--------------------------|
+| Web Analysis Tools (ArcGIS Online / ArcGIS Enterprise Map Viewer) | Limited - Map image layers cannot be used directly in web analysis tools because they serve images, not features. Only the associated feature layer (if one exists) can be used in these tools. | 
+| ArcGIS Pro Geoprocessing Tools | Limited - Only sublayers that expose query operations can be used as read-only inputs. Dynamic map layers (images) cannot serve as direct inputs for vector analysis tools. |
+| Python (ArcPy or ArcGIS API for Python) | Limited. ArcPy and the ArcGIS API can only perform REST queries on sublayers with query enabled. Map image rendering (PNG/JPEG) cannot be processed in analytical workflows unless converted. |
+| Server-side Analysis (Geoprocessing Services) | Limited - Can be used as input only if the service supports query operations. Outputs cannot overwrite or update a map image layer. Often used together with an associated feature layer for data-driven geoprocessing services. |
+| Querying | Limited - does not include editing and attachments |
+: Technical Capabilities  {tbl-colwidths="[35,65]"}
+
+
+
+
+
+
+
 

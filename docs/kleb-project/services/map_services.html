@@ -352,7 +352,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Service Content</p>
+<p>Description: Designed for fast map visualization and rendering of layers, including both vector and raster data. Uses server-side rendering, meaning the server draws the map and sends pre-rendered images (map tiles or dynamic map images) to the client, which displays them without local restyling. Supports querying and visualization, but not editing. Can be dynamic (drawn on-the-fly) or cached (tiled) for high performance. Ideal for large-scale visualization, analysis layers, and read-only data delivery.</p>
+<table class="caption-top table">
+<caption>Basic Capabilities</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Map Service (Image Layer)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data Type</td>
+<td>Vector, raster sublayers, and tables</td>
+</tr>
+<tr class="even">
+<td>Editing Support</td>
+<td>No - read-only (can optionally include a dependent feature layer for editing)</td>
+</tr>
+<tr class="odd">
+<td>Rendering</td>
+<td>Server-side rendering (authoritative symbology defined at publish)</td>
+</tr>
+<tr class="even">
+<td>Performance</td>
+<td>Optimized for visualization of large datasets (dynamic draw or cached tiles)</td>
+</tr>
+<tr class="odd">
+<td>Storage</td>
+<td>References registered data (Enterprise) or caches data to server</td>
+</tr>
+<tr class="even">
+<td>Caching</td>
+<td>Yes - Can use new or existing tile caches for faster rendering</td>
+</tr>
+<tr class="odd">
+<td>Symbolization</td>
+<td>Authored in ArcGIS Pro and rendered server-side; fixed symbology unless dynamic workspaces are enabled</td>
+</tr>
+<tr class="even">
+<td>OGC Compliance</td>
+<td>Supports publishing as WMS, WFS, WCS, OGC API (Features, and KML)</td>
+</tr>
+<tr class="odd">
+<td>Export Options</td>
+<td>Map image export (PNG, JPEG, PDF); limited vector exports for queries</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>Technical Capabilities</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Environment</th>
+<th>Map Service (Image Layer)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Web Analysis Tools (ArcGIS Online / ArcGIS Enterprise Map Viewer)</td>
+<td>Limited - Map image layers cannot be used directly in web analysis tools because they serve images, not features. Only the associated feature layer (if one exists) can be used in these tools.</td>
+</tr>
+<tr class="even">
+<td>ArcGIS Pro Geoprocessing Tools</td>
+<td>Limited - Only sublayers that expose query operations can be used as read-only inputs. Dynamic map layers (images) cannot serve as direct inputs for vector analysis tools.</td>
+</tr>
+<tr class="odd">
+<td>Python (ArcPy or ArcGIS API for Python)</td>
+<td>Limited. ArcPy and the ArcGIS API can only perform REST queries on sublayers with query enabled. Map image rendering (PNG/JPEG) cannot be processed in analytical workflows unless converted.</td>
+</tr>
+<tr class="even">
+<td>Server-side Analysis (Geoprocessing Services)</td>
+<td>Limited - Can be used as input only if the service supports query operations. Outputs cannot overwrite or update a map image layer. Often used together with an associated feature layer for data-driven geoprocessing services.</td>
+</tr>
+<tr class="odd">
+<td>Querying</td>
+<td>Limited - does not include editing and attachments</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -773,7 +859,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>&amp;copy: NASA EGIS, 2024</p>
+<p>NASA EGIS, 2025</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

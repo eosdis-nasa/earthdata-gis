@@ -85,5 +85,3 @@ To learn from examples, see the Tutorial Page for <!-- [Tutorial Notebooks](/use
 </div> <!-- /.main-content -->
 </div> <!-- /.page-with-left-sidebar -->
 
-This is a Quarto website.
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

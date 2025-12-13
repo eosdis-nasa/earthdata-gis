@@ -2,5 +2,5 @@
 title: "Announcements"
 ---
 
-Service Content 
+Description: Time-sensitive updates on service deployments, maintenance windows, changes in availability, or planned deprecations.
 

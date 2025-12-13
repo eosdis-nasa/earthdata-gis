@@ -2,5 +2,32 @@
 title: "Image Services"
 ---
 
-Service Content 
+Description: Designed for visualization, access, and analysis of raster and imagery data such as satellite, aerial, and elevation datasets. Imagery services can draw dynamically from source data or from cached tiles for faster performance. They support raster functions, multidimensional data, mensuration, and metadata access. Best suited for analytical, visualization, and sharing workflows that require access to pixel values and raster attributes 
+
+| Capability | Description|
+|------------|--------------------------|
+| Data Type | Raster datasets, image collections, mosaic datasets, multidimensional imagery, and elevation models. |
+| Editing Support | Pixel values cannot be edited directly; modifying imagery requires updating source data and republishing. Editing supports modifying service properties such as symbology, rendering rules, raster functions, and display or performance settings.  |
+| Rendering | Can draw dynamically from data (server-side rendering) or use cached tiles. | 
+| Performance Optimization| Supports browser and server-side caching, compression, and selective cache building to improve rendering performance and reduce bandwidth usage |
+| Storage | Can be referenced from enterprise/data stores or copied and hosted to ArcGIS Online. Hosted imagery services are stored in ArcGIS Online’s Cloud Raster Format (CRF). |
+| Caching | Optional. Supports dynamic draw, cached draw/pre-rendered tiles, new or existing caches, and multiple tiling schemes. Supports export of cache tiles for offline use. |
+| Compression (how pixels are stored and transmitted) | Supports JPEG, LERC, LZ77, or none. |
+| Symbolization | Defined by processing templates, default stretches, and resampling methods |
+| OGC Compliance | Supports WMS (1.0–1.3) capabilities for interoperability with external GIS clients (ex. QGIS). Public sharing is required for OGC layers to function correctly. |
+| Mensuration Tools (making geometric measurements directly from imagery) | Supports distance, area, height, and shadow measurements depending on available source data and sensor metadata. |
+: Capabilities  {tbl-colwidths="[35,65]"}
+
+
+
+| Environment | Description |
+|------------|--------------------------|
+| ArcGIS Pro | Fully supported for authoring, visualization, and analysis. Users can configure rendering, compression, resampling, orthorectification, and processing templates, and can publish or overwrite imagery layers. | 
+| Web Map Viewers (ArcGIS Online / Enterprise) | Supports basic interactive access to imagery services for visualization, filtering, and raster analysis. Users can apply raster functions, adjust rendering, and explore time or multidimensional data, but cannot author or publish imagery services. |
+| Raster Functions and Processing | Applies raster functions and templates for on-the-fly analysis and visualization, such as NDVI, hillshade, pan-sharpening, terrain analysis, or time-slice extraction from multidimensional data. Hosted tiled layers process imagery on the client; dynamic layers process imagery on the server. |
+| Analysis Tools | Supports raster analysis tools such as Clip, Zonal Statistics, Slope, Aspect, etc. when raster analysis privileges are enabled. |
+| Python (ArcPy / ArcGIS API for Python) | Fully compatible for publishing, querying pixel values, managing caches, and performing image analysis using arcgis.raster modules or ArcPy raster functions. |
+| Server-side Analysis (Geoprocessing Services) | Fully supported when published to ArcGIS Image Server. Enables custom geoprocessing models or Python script tools to run server-side, using imagery layers as inputs and outputs for batch or scheduled processing. |
+| Export Options | Supports exporting to TIFF, JPEG, PNG, or other raster formats through REST endpoints. Clients may download cache tiles if enabled. |
+: Technical Capabilities  {tbl-colwidths="[35,65]"}
 

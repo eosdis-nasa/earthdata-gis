@@ -352,7 +352,105 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Service Content</p>
+<p>Description: Designed for visualization, access, and analysis of raster and imagery data such as satellite, aerial, and elevation datasets. Imagery services can draw dynamically from source data or from cached tiles for faster performance. They support raster functions, multidimensional data, mensuration, and metadata access. Best suited for analytical, visualization, and sharing workflows that require access to pixel values and raster attributes</p>
+<table class="caption-top table">
+<caption>Capabilities</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data Type</td>
+<td>Raster datasets, image collections, mosaic datasets, multidimensional imagery, and elevation models.</td>
+</tr>
+<tr class="even">
+<td>Editing Support</td>
+<td>Pixel values cannot be edited directly; modifying imagery requires updating source data and republishing. Editing supports modifying service properties such as symbology, rendering rules, raster functions, and display or performance settings.</td>
+</tr>
+<tr class="odd">
+<td>Rendering</td>
+<td>Can draw dynamically from data (server-side rendering) or use cached tiles.</td>
+</tr>
+<tr class="even">
+<td>Performance Optimization</td>
+<td>Supports browser and server-side caching, compression, and selective cache building to improve rendering performance and reduce bandwidth usage</td>
+</tr>
+<tr class="odd">
+<td>Storage</td>
+<td>Can be referenced from enterprise/data stores or copied and hosted to ArcGIS Online. Hosted imagery services are stored in ArcGIS Online’s Cloud Raster Format (CRF).</td>
+</tr>
+<tr class="even">
+<td>Caching</td>
+<td>Optional. Supports dynamic draw, cached draw/pre-rendered tiles, new or existing caches, and multiple tiling schemes. Supports export of cache tiles for offline use.</td>
+</tr>
+<tr class="odd">
+<td>Compression (how pixels are stored and transmitted)</td>
+<td>Supports JPEG, LERC, LZ77, or none.</td>
+</tr>
+<tr class="even">
+<td>Symbolization</td>
+<td>Defined by processing templates, default stretches, and resampling methods</td>
+</tr>
+<tr class="odd">
+<td>OGC Compliance</td>
+<td>Supports WMS (1.0–1.3) capabilities for interoperability with external GIS clients (ex. QGIS). Public sharing is required for OGC layers to function correctly.</td>
+</tr>
+<tr class="even">
+<td>Mensuration Tools (making geometric measurements directly from imagery)</td>
+<td>Supports distance, area, height, and shadow measurements depending on available source data and sensor metadata.</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>Technical Capabilities</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Environment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ArcGIS Pro</td>
+<td>Fully supported for authoring, visualization, and analysis. Users can configure rendering, compression, resampling, orthorectification, and processing templates, and can publish or overwrite imagery layers.</td>
+</tr>
+<tr class="even">
+<td>Web Map Viewers (ArcGIS Online / Enterprise)</td>
+<td>Supports basic interactive access to imagery services for visualization, filtering, and raster analysis. Users can apply raster functions, adjust rendering, and explore time or multidimensional data, but cannot author or publish imagery services.</td>
+</tr>
+<tr class="odd">
+<td>Raster Functions and Processing</td>
+<td>Applies raster functions and templates for on-the-fly analysis and visualization, such as NDVI, hillshade, pan-sharpening, terrain analysis, or time-slice extraction from multidimensional data. Hosted tiled layers process imagery on the client; dynamic layers process imagery on the server.</td>
+</tr>
+<tr class="even">
+<td>Analysis Tools</td>
+<td>Supports raster analysis tools such as Clip, Zonal Statistics, Slope, Aspect, etc. when raster analysis privileges are enabled.</td>
+</tr>
+<tr class="odd">
+<td>Python (ArcPy / ArcGIS API for Python)</td>
+<td>Fully compatible for publishing, querying pixel values, managing caches, and performing image analysis using arcgis.raster modules or ArcPy raster functions.</td>
+</tr>
+<tr class="even">
+<td>Server-side Analysis (Geoprocessing Services)</td>
+<td>Fully supported when published to ArcGIS Image Server. Enables custom geoprocessing models or Python script tools to run server-side, using imagery layers as inputs and outputs for batch or scheduled processing.</td>
+</tr>
+<tr class="odd">
+<td>Export Options</td>
+<td>Supports exporting to TIFF, JPEG, PNG, or other raster formats through REST endpoints. Clients may download cache tiles if enabled.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -773,7 +871,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>&amp;copy: NASA EGIS, 2024</p>
+<p>NASA EGIS, 2025</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

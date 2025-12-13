@@ -2,4 +2,4 @@
 title: "Active Development"
 ---
 
-Active Development Efforts
+Description: EGIS is regularly onboarding collections and publishing new services, please visit the Gallery to see the full list of publicly available content. NASA’s Earth observations include ~50,000 collections of over 100 petabytes of data, it is important to note that EGIS does not currently provide geospatial services for the complete repository.

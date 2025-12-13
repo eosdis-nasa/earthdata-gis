@@ -2,5 +2,31 @@
 title: "Feature Services"
 ---
 
-Service Content 
+Description: Feature services allow access to individual vector features and their attributes. Designed to be interactive, they support querying, editing, and syncing of geographic features and are commonly used in web maps and apps. Uses client-side rendering, meaning the feature geometries and attributes are downloaded to the client (e.g., web browser, ArcGIS Pro), and the client applies symbology locally. Best for editable, transactional, or analytical workflows. Preferred by Esri for Living Atlas Nominations.   
+
+| Capability | Feature Service (Web Feature Layer) |
+|------------|--------------------------|
+| Data Type | Vector and tables |
+| Editing Support | Yes |
+| Rendering | Client-side rendering (symbology configurable per client) | 
+| Performance | Optimized for editing operations and small to medium datasets  |
+| Storage | Hosted (copied) or references registered enterprise data |
+| Caching | No - renders on demand |
+| Symbolization | Stored with the layer and applied on the client; can be restyled interactively |
+| OGC Compliance | Supports publishing as WFS (if data is copied) |
+| Export Options | Full vector and table export supported; File Geodatabase (.gdb.zip), Shapefile (.zip), CSV (.csv), GeoJSON (.geojson), Feature Collection (.json), KML (.kmz), and Excel (.xlsx) |
+: Basic Capabilities  {tbl-colwidths="[35,65]"}
+
+
+| Environment | Feature Service (Web Feature Layer) |
+|------------|--------------------------|
+| Web Analysis Tools (ArcGIS Online / ArcGIS Enterprise Map Viewer) | Fully supported in standard web analysis tools (Buffer, Overlay Layers, Summarize Within, Dissolve Boundaries, Calculate Field, etc.). Users can run analysis directly in the browser since vector features are accessible. | 
+| ArcGIS Pro Geoprocessing Tools | Fully supported in most geoprocessing tools (Select by Location, Clip, Intersect, Spatial Join, etc.). ArcGIS Pro accesses features through REST and processes them as vector inputs. |
+| Python (ArcPy or ArcGIS API for Python) | LFully compatible. The ArcGIS API for Python and ArcPy can query, filter, edit, and analyze features directly (FeatureLayer.query, SpatialDataFrame, etc. workflows). |
+| Server-side Analysis (Geoprocessing Services) | Fully supported - Can be used as both input and output in server-based geoprocessing models and analysis tools. Outputs can be written back to new hosted feature layers or tables. |
+| Querying | Fully supported |
+: Technical Capabilities  {tbl-colwidths="[35,65]"}
+
+
+
 

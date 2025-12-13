@@ -10,7 +10,7 @@ website:
   
   page-footer: 
     right: "This page is built with [Quarto](https://quarto.org/)."
-    left: "&copy: NASA EGIS, 2024"
+    left: "NASA EGIS, 2025"
 
   sidebar:
     logo: "images/EGIS-logo.png"
