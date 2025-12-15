@@ -60,7 +60,7 @@
     "href": "kleb-project/tools/third_party.html",
     "title": "Third Party Tools",
     "section": "",
-    "text": "Third Party Tools",
+    "text": "Third Party Tools\nDescription: External tools or APIs that integrate with EGIS services (e.g., Tableau, Leaflet, QGIS).",
     "crumbs": [
       "The KLEB project",
       "Tools",
@@ -72,7 +72,7 @@
     "href": "kleb-project/tools/experience_builder.html",
     "title": "Experience Builder",
     "section": "",
-    "text": "Experience Builder Examples",
+    "text": "Description: A web app builder allowing users to create custom layouts, workflows, and interactive GIS applications.\nExample Application 1: Water Portal * Water Portal - Overview\nExample Application 2: Landslide Viewer Experience * Landslide Viewer Experience - Overview\nExample Application 3: NISAR Mission Observation Plan * NISAR Mission Observation Plan - Overview",
     "crumbs": [
       "The KLEB project",
       "Tools",
@@ -84,7 +84,7 @@
     "href": "kleb-project/tools/appbuilder.html",
     "title": "Web AppBuilder",
     "section": "",
-    "text": "Web App Builder Examples",
+    "text": "Web App Builder Examples\nDescription: Legacy app creation tool offering widget-based web applications with configurable maps and tools.",
     "crumbs": [
       "The KLEB project",
       "Tools",
@@ -131,7 +131,7 @@
     "href": "kleb-project/resources/index.html",
     "title": "Resources",
     "section": "",
-    "text": "General Documentation Links",
+    "text": "General Documentation Links\nDescription: Official links to resources, best practices, and product documentation.\nGIS at NASA: Landing page for information relating to NASA data and services. * Improving the Discovery, Access, and Use of Earth Science Data | NASA Earthdata\nEarthdata Tutorials: “How To” guides on integration and usage of NASA data. * Tutorials | NASA Earthdata\nTroubleshooting Guides: * Earthdata GIS Forum",
     "crumbs": [
       "The KLEB project",
       "Resources"
@@ -142,7 +142,7 @@
     "href": "kleb-project/resources/external_resources.html",
     "title": "External Resources",
     "section": "",
-    "text": "Links to External Resources",
+    "text": "Description: Useful third-party resources, such as WMS validators, OGC standards, or open GIS datasets. GitHub, Stacked Overflow, etc. Shape\nMap services/layers  Feature Service/layers  Earthdata GIS Pathfinder\nGetting Started: * Image Services Wiki * Image Services StoryMap",
     "crumbs": [
       "The KLEB project",
       "Resources",
@@ -238,21 +238,21 @@
     ]
   },
   {
-    "objectID": "index.html#release-tracker",
-    "href": "index.html#release-tracker",
-    "title": "Known Limitations and Expected Behaviors",
-    "section": "Release Tracker",
-    "text": "Release Tracker",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
     "objectID": "index.html#new-to-earthdata-seach-and-crm-stac",
     "href": "index.html#new-to-earthdata-seach-and-crm-stac",
     "title": "Known Limitations and Expected Behaviors",
     "section": "New to Earthdata Seach and CRM STAC?",
     "text": "New to Earthdata Seach and CRM STAC?\nTo learn from examples, see the Tutorial Page for  examples of data services and images.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#egis-content-release-tracker",
+    "href": "index.html#egis-content-release-tracker",
+    "title": "Known Limitations and Expected Behaviors",
+    "section": "EGIS Content Release Tracker",
+    "text": "EGIS Content Release Tracker\n\n\n\n\n\n\n\n\n\nRelease\nSummary\nDate\nOwner\n\n\n\n\n1.0\nInitial webpage build and population of existing content\n12/12/2025\nryan-barnhart",
     "crumbs": [
       "Welcome"
     ]
@@ -362,7 +362,7 @@
     "href": "kleb-project/resources/how_to.html",
     "title": "How To",
     "section": "",
-    "text": "Information relating to how to complete.",
+    "text": "Description: Short instructional videos covering specific workflows or tools.\n\nNASA EOSDIS Tutorials Github\nEarthdata Tutorials (future: filter or query EGIS or GIS specifically)\n\nEarthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content * Earthdata GIS Resources - YouTube",
     "crumbs": [
       "The KLEB project",
       "Resources",
@@ -410,7 +410,7 @@
     "href": "kleb-project/standards/index.html",
     "title": "Standards",
     "section": "",
-    "text": "Data Standards and Management",
+    "text": "Data Standards and Management\nDescription: Required metadata elements for datasets and services, such as title, description, spatial extent, and update frequency.",
     "crumbs": [
       "The KLEB project",
       "Standards"
@@ -421,7 +421,7 @@
     "href": "kleb-project/tools/dashboards.html",
     "title": "Dashboards",
     "section": "",
-    "text": "Dashboards",
+    "text": "Description: Web apps designed for visualizing real-time or aggregated spatial data using charts, indicators, and maps.",
     "crumbs": [
       "The KLEB project",
       "Tools",

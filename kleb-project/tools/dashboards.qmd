@@ -2,4 +2,4 @@
 title: "Dashboards"
 ---
 
-Dashboards
+Description: Web apps designed for visualizing real-time or aggregated spatial data using charts, indicators, and maps. 

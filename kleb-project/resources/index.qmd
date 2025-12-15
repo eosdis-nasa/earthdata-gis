@@ -3,3 +3,14 @@ title: "Resources"
 ---
 
 General Documentation Links
+
+Description: Official links to resources, best practices, and product documentation. 
+
+GIS at NASA: Landing page for information relating to NASA data and services. 
+* [Improving the Discovery, Access, and Use of Earth Science Data | NASA Earthdata](https://www.earthdata.nasa.gov/learn/gis)
+
+Earthdata Tutorials: “How To” guides on integration and usage of NASA data. 
+* [Tutorials | NASA Earthdata](https://www.earthdata.nasa.gov/learn/tutorials)
+
+Troubleshooting Guides:
+* [Earthdata GIS Forum](https://forum.earthdata.nasa.gov/viewforum.php?f=7)

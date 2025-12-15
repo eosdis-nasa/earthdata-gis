@@ -2,4 +2,11 @@
 title: "How To"
 ---
 
-Information relating to how to complete. 
+Description: Short instructional videos covering specific workflows or tools. 
+
+* [NASA EOSDIS Tutorials Github](https://github.com/eosdis-nasa/earthdata-gis/tree/main/tutorials)
+
+* [Earthdata Tutorials](https://www.earthdata.nasa.gov/learn/tutorials) (future: filter or query EGIS or GIS specifically) 
+
+Earthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content 
+* [Earthdata GIS Resources - YouTube](https://www.youtube.com/playlist?list=PLO2yB4LGNlWowMYh8wJWDu3oMGbN1GGNN)  

@@ -2,4 +2,14 @@
 title: "External Resources"
 ---
 
-Links to External Resources
+Description: Useful third-party resources, such as WMS validators, OGC standards, or open GIS datasets. GitHub, Stacked Overflow, etc. Shape 
+
+Map services/layers 
+    *
+Feature Service/layers 
+    *
+[Earthdata GIS Pathfinder](https://www.earthdata.nasa.gov/learn/gis)
+
+Getting Started:
+* [Image Services Wiki](https://wiki.earthdata.nasa.gov/spaces/egis/pages/312675124/Getting+Started+with+Image+Services+Usage+Tutorial)
+* [Image Services StoryMap](https://www.earthdata.nasa.gov/learn/gis/storymaps)
