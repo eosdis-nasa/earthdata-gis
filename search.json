@@ -210,7 +210,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Known Limitations and Expected Behaviors",
+    "title": "EGIS Data Service Infomation and Resources",
     "section": "",
     "text": "These docs help you use the services provided by the Earthdata Search Platform and NASA’s CMR STAC. Its purpose is to be a resource for interacting with NASA data and provide use cases as well as behaviors in ArcGIS Pro and open-source data.",
     "crumbs": [
@@ -220,7 +220,7 @@
   {
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
-    "title": "Known Limitations and Expected Behaviors",
+    "title": "EGIS Data Service Infomation and Resources",
     "section": "",
     "text": "These docs help you use the services provided by the Earthdata Search Platform and NASA’s CMR STAC. Its purpose is to be a resource for interacting with NASA data and provide use cases as well as behaviors in ArcGIS Pro and open-source data.",
     "crumbs": [
@@ -230,7 +230,7 @@
   {
     "objectID": "index.html#kleb",
     "href": "index.html#kleb",
-    "title": "Known Limitations and Expected Behaviors",
+    "title": "EGIS Data Service Infomation and Resources",
     "section": "Known Limitations and Expected Behaviors",
     "text": "Known Limitations and Expected Behaviors\n\n\n\n\nOverview and Guidance\n\nPurpose of the Documentation Hub\nHow to Use This Resource\n\n\n\n\n\nEGIS Limitations\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\n\n\n\n\nServices\n\nMap Services\nFeature Services\nImage Services\nOGC Services\nService Announcements\n\n\n\n\n\nProduct and Platform Behavior\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\n\nApplication Integrations & Tools\n\nDashboards\nExperience Builder\nWeb AppBuilder\nArcGIS Online vs Enterprise\nThird Party Tools\n\n\n\n\n\nData Standards & Managements\n\nData Standards & Managements\n\n\n\n\n\nResources\n\nGeneral Documentation Links\nHow-To\nExternal Resources",
     "crumbs": [
@@ -240,7 +240,7 @@
   {
     "objectID": "index.html#new-to-earthdata-seach-and-crm-stac",
     "href": "index.html#new-to-earthdata-seach-and-crm-stac",
-    "title": "Known Limitations and Expected Behaviors",
+    "title": "EGIS Data Service Infomation and Resources",
     "section": "New to Earthdata Seach and CRM STAC?",
     "text": "New to Earthdata Seach and CRM STAC?\nTo learn from examples, see the Tutorial Page for  examples of data services and images.",
     "crumbs": [
@@ -250,7 +250,7 @@
   {
     "objectID": "index.html#egis-content-release-tracker",
     "href": "index.html#egis-content-release-tracker",
-    "title": "Known Limitations and Expected Behaviors",
+    "title": "EGIS Data Service Infomation and Resources",
     "section": "EGIS Content Release Tracker",
     "text": "EGIS Content Release Tracker\n\n\n\n\n\n\n\n\n\nRelease\nSummary\nDate\nOwner\n\n\n\n\n1.0\nInitial webpage build and population of existing content\n12/12/2025\nryan-barnhart",
     "crumbs": [
