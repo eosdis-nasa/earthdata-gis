@@ -1,6 +1,6 @@
 ---
-title: "Known Limitations and Expected Behaviors"
-subtitle: "This document summarizes specific use cases and procedures for using data within ArcGIS Pro and QGIS"
+title: "EGIS Data Service Infomation and Resources"
+subtitle: "This document summarizes specific use cases and procedures for using data and service endpoints. "
 format: html
 ---
 
