@@ -327,8 +327,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructional-links-and-documentation" id="toc-instructional-links-and-documentation" class="nav-link active" data-scroll-target="#instructional-links-and-documentation">Instructional Links and Documentation</a></li>
+  <li><a href="#access-earthdata-content-in-arcgis-pro" id="toc-access-earthdata-content-in-arcgis-pro" class="nav-link" data-scroll-target="#access-earthdata-content-in-arcgis-pro">Access Earthdata Content In ArcGIS Pro</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/resources/how_to.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -352,14 +359,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Description: Short instructional videos covering specific workflows or tools.</p>
+<section id="instructional-links-and-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="instructional-links-and-documentation">Instructional Links and Documentation</h3>
+<p>Description: Short instructional videos or documentation covering specific workflows or tools.</p>
 <ul>
 <li><p><a href="https://github.com/eosdis-nasa/earthdata-gis/tree/main/tutorials">NASA EOSDIS Tutorials Github</a></p></li>
 <li><p><a href="https://www.earthdata.nasa.gov/learn/tutorials">Earthdata Tutorials</a> (future: filter or query EGIS or GIS specifically)</p></li>
 </ul>
 <p>Earthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content * <a href="https://www.youtube.com/playlist?list=PLO2yB4LGNlWowMYh8wJWDu3oMGbN1GGNN">Earthdata GIS Resources - YouTube</a></p>
+</section>
+<section id="access-earthdata-content-in-arcgis-pro" class="level3">
+<h3 class="anchored" data-anchor-id="access-earthdata-content-in-arcgis-pro">Access Earthdata Content In ArcGIS Pro</h3>
+<p>From the NASA Earthdata GIS collection Map click “Open via Pro” to initiate an item download. When you attempt to open the downloaded item (.pitemx) in ArcGIS Pro you will most likely receive an error. This is a known bug with a workaround.</p>
+<p>Specifically, errors occur when you try to open an item from Portal A while logged into Portal B in ArcGIS Pro.</p>
+<p>As a workaround, switch the active portal to the content’s home (Portal A). You do not need to have an EGIS Portal account or sign in to set your active portal to EGIS. Open the .pitemx file again.</p>
+<p>Portal URL for EGIS Items: <a href="https://gis.earthdata.nasa.gov/portal/home">NASA Portal</a></p>
+<p>How to Switch Your Active Portal:</p>
+<p>Click the Sign In menu in the upper corner of ArcGIS Pro Click Manage Portals If the EGIS Portal is Not Registered: Click Add Portal Enter the EGIS Portal URL Save Registration If the EGIS Portal is Already Registered: Click Switch to designate as Active Portal</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\images/Portal_Use_Example.png" class="img-fluid figure-img"></p>
+<figcaption>Changing Portal to add .pitemx</figcaption>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -782,7 +807,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/resources/how_to.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/resources/how_to.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

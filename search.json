@@ -142,7 +142,7 @@
     "href": "kleb-project/resources/external_resources.html",
     "title": "External Resources",
     "section": "",
-    "text": "Description: Useful third-party resources, such as WMS validators, OGC standards, or open GIS datasets. GitHub, Stacked Overflow, etc. Shape\nMap services/layers  Feature Service/layers  Earthdata GIS Pathfinder\nGetting Started: * Image Services Wiki * Image Services StoryMap",
+    "text": "Description: Useful third-party resources, such as WMS validators, OGC standards, or open GIS datasets. GitHub, Stacked Overflow, etc. Shape\nMap services/layers  Feature Service/layers \nEarthdata GIS Pathfinder\nGetting Started:\n\nImage Services Wiki\nImage Services StoryMap",
     "crumbs": [
       "The KLEB project",
       "Resources",
@@ -154,7 +154,7 @@
     "href": "kleb-project/egis-limitations/service_capability.html",
     "title": "Service Capabilites",
     "section": "",
-    "text": "Image Service Capability Index\n\n\nDescription: Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.",
+    "text": "Image Service Capability Index\n\n\nDescription: Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.\n\nArcGIS ImageServer Connector Plugin in QGIS\nWhile the ArcGIS ImageServer Connector plugin is also available and provides additional functionality with EGIS Image Services, the plugin was built by the Swedish Agency for Marine and Water Management and is no longer actively supported. The last update was in August 2019.\n\n\nTemporal Capabilities in QGIS\nEGIS image services generally do not show temporal slices, even with troubleshooting, no matter which importa methodology used (ArcGIS REST, WMS/WMTS, or plugins). Dynamic temporal control or using the temporal controller do not yield intended results. Some service WMS capabilities may provide workarounds while enhancements are underway.\n\n\nRaster Processing in QGIS\nIf using the ArcGIS REST Connection import method, most geoprocessing tools fail as the functions are not built to handle services and are therefore looking for a local file to run the analytics on.\nRaster processing was successful when using the ImageServer Connector plugin Import method.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -166,7 +166,7 @@
     "href": "kleb-project/egis-limitations/index.html",
     "title": "EGIS Limitations",
     "section": "",
-    "text": "EGIS Limitations",
+    "text": "EGIS Limitations\nEGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations"
@@ -189,7 +189,7 @@
     "href": "kleb-project/behaviors/versioning.html",
     "title": "Versioning",
     "section": "",
-    "text": "Version specific behavior",
+    "text": "Version specific behavior\nDescription: Behavior changes, bugs, or enhancements tied to specific versions of Esri software (e.g., ArcGIS Enterprise 11.2 vs. 11.1 or ArcGIS Pro 3.3 vs 3.5.4).",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -272,7 +272,19 @@
     "href": "kleb-project/behaviors/endpoints.html",
     "title": "API Endpoints",
     "section": "",
-    "text": "OGC vs COTS Endpoints",
+    "text": "To use EGIS content outside of the web map viewer, access the “URL” at the bottom right of the content item page. This is the REST endpoint from which you can view or copy the URL to then bring into your tool, application, or client of choice.\n\n\n\nDirect Endpoint Example",
+    "crumbs": [
+      "The KLEB project",
+      "Product and Platform Behavior",
+      "API Endpoints"
+    ]
+  },
+  {
+    "objectID": "kleb-project/behaviors/endpoints.html#ogc-vs-cots-endpoints",
+    "href": "kleb-project/behaviors/endpoints.html#ogc-vs-cots-endpoints",
+    "title": "API Endpoints",
+    "section": "OGC vs COTS Endpoints",
+    "text": "OGC vs COTS Endpoints\n\nWMS\nDescription: Parameters passed in the URL of a WMS request to specify layers, coordinate systems, bounding boxes, image format, etc. (e.g., LAYERS=, SRS=, BBOX=).\n\n\nREST\nDescription: Parameters passed in the URL that represents a resource or functionality in a RESTful API. It acts as the interface where clients send requests to interact with the server. REST endpoints are integral to enabling communication between clients (e.g., web or mobile applications) and servers in a RESTful architecture.",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -284,7 +296,7 @@
     "href": "kleb-project/behaviors/pop_up.html",
     "title": "Pop Up Behavior",
     "section": "",
-    "text": "Pop Up Behaviors",
+    "text": "Description: Interactive UI elements that display attribute data when a user clicks a feature. Behavior and formatting differ across platforms.",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -296,7 +308,7 @@
     "href": "kleb-project/behaviors/web_vs_desktop.html",
     "title": "Development",
     "section": "",
-    "text": "Web vs Desktop Development",
+    "text": "Web vs Desktop Development\nDescription: Differences in service behavior, UI rendering, interactivity, and limitations between web applications (e.g., ArcGIS Online, Experience Builder) and desktop clients (e.g., ArcGIS Pro).",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -362,7 +374,7 @@
     "href": "kleb-project/resources/how_to.html",
     "title": "How To",
     "section": "",
-    "text": "Description: Short instructional videos covering specific workflows or tools.\n\nNASA EOSDIS Tutorials Github\nEarthdata Tutorials (future: filter or query EGIS or GIS specifically)\n\nEarthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content * Earthdata GIS Resources - YouTube",
+    "text": "Instructional Links and Documentation\nDescription: Short instructional videos or documentation covering specific workflows or tools.\n\nNASA EOSDIS Tutorials Github\nEarthdata Tutorials (future: filter or query EGIS or GIS specifically)\n\nEarthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content * Earthdata GIS Resources - YouTube\n\n\nAccess Earthdata Content In ArcGIS Pro\nFrom the NASA Earthdata GIS collection Map click “Open via Pro” to initiate an item download. When you attempt to open the downloaded item (.pitemx) in ArcGIS Pro you will most likely receive an error. This is a known bug with a workaround.\nSpecifically, errors occur when you try to open an item from Portal A while logged into Portal B in ArcGIS Pro.\nAs a workaround, switch the active portal to the content’s home (Portal A). You do not need to have an EGIS Portal account or sign in to set your active portal to EGIS. Open the .pitemx file again.\nPortal URL for EGIS Items: NASA Portal\nHow to Switch Your Active Portal:\nClick the Sign In menu in the upper corner of ArcGIS Pro Click Manage Portals If the EGIS Portal is Not Registered: Click Add Portal Enter the EGIS Portal URL Save Registration If the EGIS Portal is Already Registered: Click Switch to designate as Active Portal\n\n\n\nChanging Portal to add .pitemx",
     "crumbs": [
       "The KLEB project",
       "Resources",

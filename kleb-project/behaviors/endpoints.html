@@ -327,8 +327,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#access-direct-url-or-rest-endpoint" id="toc-access-direct-url-or-rest-endpoint" class="nav-link active" data-scroll-target="#access-direct-url-or-rest-endpoint">Access Direct URL or REST endpoint</a></li>
+  <li><a href="#ogc-vs-cots-endpoints" id="toc-ogc-vs-cots-endpoints" class="nav-link" data-scroll-target="#ogc-vs-cots-endpoints">OGC vs COTS Endpoints</a>
+  <ul class="collapse">
+  <li><a href="#wms" id="toc-wms" class="nav-link" data-scroll-target="#wms">WMS</a></li>
+  <li><a href="#rest" id="toc-rest" class="nav-link" data-scroll-target="#rest">REST</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/behaviors/endpoints.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -352,9 +363,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>OGC vs COTS Endpoints</p>
+<section id="access-direct-url-or-rest-endpoint" class="level3">
+<h3 class="anchored" data-anchor-id="access-direct-url-or-rest-endpoint">Access Direct URL or REST endpoint</h3>
+<p>To use EGIS content outside of the web map viewer, access the “URL” at the bottom right of the content item page. This is the REST endpoint from which you can view or copy the URL to then bring into your tool, application, or client of choice.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\images/Rest_URL.png" class="img-fluid figure-img"></p>
+<figcaption>Direct Endpoint Example</figcaption>
+</figure>
+</div>
+</section>
+<section id="ogc-vs-cots-endpoints" class="level2">
+<h2 class="anchored" data-anchor-id="ogc-vs-cots-endpoints">OGC vs COTS Endpoints</h2>
+<section id="wms" class="level3">
+<h3 class="anchored" data-anchor-id="wms">WMS</h3>
+<p>Description: Parameters passed in the URL of a WMS request to specify layers, coordinate systems, bounding boxes, image format, etc. (e.g., LAYERS=, SRS=, BBOX=).</p>
+</section>
+<section id="rest" class="level3">
+<h3 class="anchored" data-anchor-id="rest">REST</h3>
+<p>Description: Parameters passed in the URL that represents a resource or functionality in a RESTful API. It acts as the interface where clients send requests to interact with the server. REST endpoints are integral to enabling communication between clients (e.g., web or mobile applications) and servers in a RESTful architecture.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -777,7 +808,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/behaviors/endpoints.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/behaviors/endpoints.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
