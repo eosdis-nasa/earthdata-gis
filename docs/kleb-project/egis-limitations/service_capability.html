@@ -327,8 +327,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#arcgis-imageserver-connector-plugin-in-qgis" id="toc-arcgis-imageserver-connector-plugin-in-qgis" class="nav-link active" data-scroll-target="#arcgis-imageserver-connector-plugin-in-qgis">ArcGIS ImageServer Connector Plugin in QGIS</a></li>
+  <li><a href="#temporal-capabilities-in-qgis" id="toc-temporal-capabilities-in-qgis" class="nav-link" data-scroll-target="#temporal-capabilities-in-qgis">Temporal Capabilities in QGIS</a></li>
+  <li><a href="#raster-processing-in-qgis" id="toc-raster-processing-in-qgis" class="nav-link" data-scroll-target="#raster-processing-in-qgis">Raster Processing in QGIS</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/egis-limitations/service_capability.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -359,8 +367,21 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Description: Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.</p>
+<section id="arcgis-imageserver-connector-plugin-in-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="arcgis-imageserver-connector-plugin-in-qgis">ArcGIS ImageServer Connector Plugin in QGIS</h3>
+<p>While the ArcGIS ImageServer Connector plugin is also available and provides additional functionality with EGIS Image Services, the plugin was built by the Swedish Agency for Marine and Water Management and is no longer actively supported. The last update was in August 2019.</p>
+</section>
+<section id="temporal-capabilities-in-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="temporal-capabilities-in-qgis">Temporal Capabilities in QGIS</h3>
+<p>EGIS image services generally do not show temporal slices, even with troubleshooting, no matter which importa methodology used (ArcGIS REST, WMS/WMTS, or plugins). Dynamic temporal control or using the temporal controller do not yield intended results. Some service WMS capabilities may provide workarounds while enhancements are underway.</p>
+</section>
+<section id="raster-processing-in-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="raster-processing-in-qgis">Raster Processing in QGIS</h3>
+<p>If using the ArcGIS REST Connection import method, most geoprocessing tools fail as the functions are not built to handle services and are therefore looking for a local file to run the analytics on.</p>
+<p>Raster processing was successful when using the ImageServer Connector plugin Import method.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -783,7 +804,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/egis-limitations/service_capability.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/eosdis-nasa/earthdata-gis/edit/main/kleb-project/egis-limitations/service_capability.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/eosdis-nasa/earthdata-gis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

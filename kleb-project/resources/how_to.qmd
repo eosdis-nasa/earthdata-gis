@@ -2,7 +2,9 @@
 title: "How To"
 ---
 
-Description: Short instructional videos covering specific workflows or tools. 
+### Instructional Links and Documentation
+
+Description: Short instructional videos or documentation covering specific workflows or tools. 
 
 * [NASA EOSDIS Tutorials Github](https://github.com/eosdis-nasa/earthdata-gis/tree/main/tutorials)
 
@@ -10,3 +12,25 @@ Description: Short instructional videos covering specific workflows or tools.
 
 Earthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content 
 * [Earthdata GIS Resources - YouTube](https://www.youtube.com/playlist?list=PLO2yB4LGNlWowMYh8wJWDu3oMGbN1GGNN)  
+
+### Access Earthdata Content In ArcGIS Pro
+From the NASA Earthdata GIS collection Map click "Open via Pro" to initiate an item download. When you attempt to open the downloaded item (.pitemx) in ArcGIS Pro you will most likely receive an error. This is a known bug with a workaround.
+
+Specifically, errors occur when you try to open an item from Portal A while logged into Portal B in ArcGIS Pro.
+
+As a workaround, switch the active portal to the content's home (Portal A). You do not need to have an EGIS Portal account or sign in to set your active portal to EGIS. Open the .pitemx file again. 
+
+Portal URL for EGIS Items: [NASA Portal](https://gis.earthdata.nasa.gov/portal/home) 
+
+How to Switch Your Active Portal: 
+
+Click the Sign In menu in the upper corner of ArcGIS Pro
+Click Manage Portals
+If the EGIS Portal is Not Registered:
+Click Add Portal
+Enter the EGIS Portal URL
+Save Registration
+If the EGIS Portal is Already Registered:
+Click Switch to designate as Active Portal
+
+![Changing Portal to add .pitemx](/images/Portal_Use_Example.png)

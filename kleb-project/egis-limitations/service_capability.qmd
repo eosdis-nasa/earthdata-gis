@@ -6,3 +6,18 @@ title: "Service Capabilites"
 ![Image Service Capability Index](/images/capability_index.png)
 
 Description: Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB. 
+
+
+### ArcGIS ImageServer Connector Plugin in QGIS
+
+While the ArcGIS ImageServer Connector plugin is also available and provides additional functionality with EGIS Image Services, the plugin was built by the Swedish Agency for Marine and Water Management and is no longer actively supported. The last update was in August 2019.
+
+### Temporal Capabilities in QGIS
+
+EGIS image services generally do not show temporal slices, even with troubleshooting, no matter which importa methodology used (ArcGIS REST, WMS/WMTS, or plugins). Dynamic temporal control or using the temporal controller do not yield intended results. Some service WMS capabilities may provide workarounds while enhancements are underway.
+
+### Raster Processing in QGIS
+
+If using the ArcGIS REST Connection import method, most geoprocessing tools fail as the functions are not built to handle services and are therefore looking for a local file to run the analytics on.
+
+Raster processing was successful when using the ImageServer Connector plugin Import method.

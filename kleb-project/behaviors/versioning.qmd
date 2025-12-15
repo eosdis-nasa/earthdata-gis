@@ -3,3 +3,5 @@ title: "Versioning"
 ---
 
 Version specific behavior
+
+Description: Behavior changes, bugs, or enhancements tied to specific versions of Esri software (e.g., ArcGIS Enterprise 11.2 vs. 11.1 or ArcGIS Pro 3.3 vs 3.5.4). 

@@ -2,4 +2,15 @@
 title: "API Endpoints"
 ---
 
-OGC vs COTS Endpoints
+### Access Direct URL or REST endpoint
+To use EGIS content outside of the web map viewer, access the "URL" at the bottom right of the content item page. This is the REST endpoint from which you can view or copy the URL to then bring into your tool, application, or client of choice.
+
+![Direct Endpoint Example](/images/Rest_URL.png)
+
+## OGC vs COTS Endpoints
+
+### WMS 
+Description: Parameters passed in the URL of a WMS request to specify layers, coordinate systems, bounding boxes, image format, etc. (e.g., LAYERS=, SRS=, BBOX=). 
+
+### REST 
+Description: Parameters passed in the URL that represents a resource or functionality in a RESTful API. It acts as the interface where clients send requests to interact with the server. REST endpoints are integral to enabling communication between clients (e.g., web or mobile applications) and servers in a RESTful architecture.

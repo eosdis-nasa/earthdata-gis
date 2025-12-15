@@ -2,4 +2,4 @@
 title: "Pop Up Behavior"
 ---
 
-Pop Up Behaviors 
+Description: Interactive UI elements that display attribute data when a user clicks a feature. Behavior and formatting differ across platforms. 
