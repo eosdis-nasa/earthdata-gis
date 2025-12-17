@@ -238,11 +238,11 @@
     ]
   },
   {
-    "objectID": "index.html#new-to-earthdata-seach-and-crm-stac",
-    "href": "index.html#new-to-earthdata-seach-and-crm-stac",
+    "objectID": "index.html#tutorials",
+    "href": "index.html#tutorials",
     "title": "EGIS Service Information, Tools, and Resources",
-    "section": "New to Earthdata Seach and CRM STAC?",
-    "text": "New to Earthdata Seach and CRM STAC?\nTo learn from examples, see the Tutorial Page for  examples of data services and images.",
+    "section": "Tutorials",
+    "text": "Tutorials\nTo learn from examples, see the Tutorial Page for  examples of data services and images.",
     "crumbs": [
       "Welcome"
     ]
