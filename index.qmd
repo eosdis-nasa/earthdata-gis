@@ -76,11 +76,12 @@ These docs help you use the services provided by the Earthdata Search Platform a
 :::
 
 ::::
-## New to Earthdata Seach and CRM STAC?
+## Tutorials
 
-To learn from examples, see the Tutorial Page for <!-- [Tutorial Notebooks](/user-guide/notebooks/index.qmd)--> examples of data services and images. 
+To learn from examples, see the Tutorial Page for <!-- [Tutorial Notebooks](/tutorials/index.qmd)--> examples of data services and images. 
 
 ## EGIS Content Release Tracker
+
 | Release | Summary | Date | Owner |
 |---------|---------|------|-------|
 | 1.0 | Initial webpage build and population of existing content | 12/12/2025 | ryan-barnhart | 
