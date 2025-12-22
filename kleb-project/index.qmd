@@ -5,22 +5,20 @@ subtitle: "Background and Vision"
 
 ## Project Context
 
-Context for project
+The Known Limitations and Expected Behaviors project is focused on providing users with a clear, transparent understanding of the constraints, performance characteristics, and expected behaviors of the data and data services provided by NASA EGIS. 
 
 
 ## Project Goals
+* **Understand Service Constraints:** Clearly communicate the limitations, such as data access rates, storage capacity, response time, geographical coverage, and temporal availability, so users can make informed decisions about how to effectively use the data services.
+* **Set User Expectations:** Outline the expected behaviors and performance standards (e.g., data refresh rates, accuracy, and latency), ensuring users know what to expect in terms of data quality and service reliability.
+* **Assist in Problem Diagnosis:** Provide insights into common issues that might arise (e.g., service outages, data inconsistencies, or connection errors) and offer troubleshooting tips or solutions to help users mitigate disruptions.
+* **Improve User Experience:** Guide users in optimizing their use of data services by offering best practices and workarounds for known limitations, helping them avoid frustration or misinterpretation of data.
+* **Promote Transparency:** Providing detailed documentation about the potential issues or areas where the service may not meet specific user needs, whether due to data accessibility, scalability, or other factors.
+* **Facilitate Integration:** Help developers and users integrate the service more effectively by outlining technical behaviors (e.g., API limitations, expected input/output formats, or rate limits), ensuring seamless data consumption and interaction.
 
-* Leverage existing open source documents
-* Understand the limitations of data within ArcGIS Pro
-* Understand the limitations of data within open-source platforms
-* Track known issues and behaviors for commnunity involvement
 
 ### Stakeholder Benefits
 
 * General Public: Interactive stories and test cases
 * Data producers/Researchers (Curators): processing and self-publishing
-* Communication: 
-
-### Overview
-![Matrix Image](kleb-project/images/Compatibility_Matrix.png)
-Image Service Compatibility Matrix. Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.
+* Communication: Update user community via https://eosdis-nasa.github.io/earthdata-gis/ homepage regarding new content or features added.

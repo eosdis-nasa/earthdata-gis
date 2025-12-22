@@ -15,7 +15,6 @@ These docs help you use the services provided by the Earthdata Search Platform a
 ### Overview and Guidance
 
 * [Purpose of the Documentation Hub](/kleb-project/index.html)
-* How to Use This Resource
 :::
 
 :::{#secondcol}
