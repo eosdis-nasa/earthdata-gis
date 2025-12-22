@@ -232,7 +232,7 @@
     "href": "index.html#kleb",
     "title": "EGIS Service Information, Tools, and Resources",
     "section": "Known Limitations and Expected Behaviors",
-    "text": "Known Limitations and Expected Behaviors\n\n\n\n\nOverview and Guidance\n\nPurpose of the Documentation Hub\nHow to Use This Resource\n\n\n\n\n\nEGIS Limitations\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\n\n\n\n\nServices\n\nMap Services\nFeature Services\nImage Services\nOGC Services\nService Announcements\n\n\n\n\n\nProduct and Platform Behavior\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\n\nApplication Integrations & Tools\n\nDashboards\nExperience Builder\nWeb AppBuilder\nArcGIS Online vs Enterprise\nThird Party Tools\n\n\n\n\n\nData Standards & Managements\n\nData Standards & Managements\n\n\n\n\n\nResources\n\nGeneral Documentation Links\nHow-To\nExternal Resources",
+    "text": "Known Limitations and Expected Behaviors\n\n\n\n\nOverview and Guidance\n\nPurpose of the Documentation Hub\n\n\n\n\n\nEGIS Limitations\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\n\n\n\n\nServices\n\nMap Services\nFeature Services\nImage Services\nOGC Services\nService Announcements\n\n\n\n\n\nProduct and Platform Behavior\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\n\nApplication Integrations & Tools\n\nDashboards\nExperience Builder\nWeb AppBuilder\nArcGIS Online vs Enterprise\nThird Party Tools\n\n\n\n\n\nData Standards & Managements\n\nData Standards & Managements\n\n\n\n\n\nResources\n\nGeneral Documentation Links\nHow-To\nExternal Resources",
     "crumbs": [
       "Welcome"
     ]
@@ -344,7 +344,7 @@
     "href": "kleb-project/index.html",
     "title": "The KLEB project",
     "section": "",
-    "text": "Context for project",
+    "text": "The Known Limitations and Expected Behaviors project is focused on providing users with a clear, transparent understanding of the constraints, performance characteristics, and expected behaviors of the data and data services provided by NASA EGIS.",
     "crumbs": [
       "The KLEB project"
     ]
@@ -354,7 +354,7 @@
     "href": "kleb-project/index.html#project-context",
     "title": "The KLEB project",
     "section": "",
-    "text": "Context for project",
+    "text": "The Known Limitations and Expected Behaviors project is focused on providing users with a clear, transparent understanding of the constraints, performance characteristics, and expected behaviors of the data and data services provided by NASA EGIS.",
     "crumbs": [
       "The KLEB project"
     ]
@@ -364,7 +364,7 @@
     "href": "kleb-project/index.html#project-goals",
     "title": "The KLEB project",
     "section": "Project Goals",
-    "text": "Project Goals\n\nLeverage existing open source documents\nUnderstand the limitations of data within ArcGIS Pro\nUnderstand the limitations of data within open-source platforms\nTrack known issues and behaviors for commnunity involvement\n\n\nStakeholder Benefits\n\nGeneral Public: Interactive stories and test cases\nData producers/Researchers (Curators): processing and self-publishing\nCommunication:\n\n\n\nOverview\n Image Service Compatibility Matrix. Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.",
+    "text": "Project Goals\n\nUnderstand Service Constraints: Clearly communicate the limitations, such as data access rates, storage capacity, response time, geographical coverage, and temporal availability, so users can make informed decisions about how to effectively use the data services.\nSet User Expectations: Outline the expected behaviors and performance standards (e.g., data refresh rates, accuracy, and latency), ensuring users know what to expect in terms of data quality and service reliability.\nAssist in Problem Diagnosis: Provide insights into common issues that might arise (e.g., service outages, data inconsistencies, or connection errors) and offer troubleshooting tips or solutions to help users mitigate disruptions.\nImprove User Experience: Guide users in optimizing their use of data services by offering best practices and workarounds for known limitations, helping them avoid frustration or misinterpretation of data.\nPromote Transparency: Providing detailed documentation about the potential issues or areas where the service may not meet specific user needs, whether due to data accessibility, scalability, or other factors.\nFacilitate Integration: Help developers and users integrate the service more effectively by outlining technical behaviors (e.g., API limitations, expected input/output formats, or rate limits), ensuring seamless data consumption and interaction.\n\n\nStakeholder Benefits\n\nGeneral Public: Interactive stories and test cases\nData producers/Researchers (Curators): processing and self-publishing\nCommunication: Update user community via https://eosdis-nasa.github.io/earthdata-gis/ homepage regarding new content or features added.",
     "crumbs": [
       "The KLEB project"
     ]
