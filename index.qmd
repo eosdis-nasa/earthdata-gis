@@ -6,7 +6,7 @@ format: html
 
 ## Welcome {#welcome}
 
-These docs help you use the services provided by the Earthdata Search Platform and NASA's CMR STAC. Its purpose is to be a resource for interacting with NASA data and provide use cases as well as behaviors in ArcGIS Pro and open-source data. 
+These docs help you use the services provided by the Earthdata Search Platform and NASA's CMR STAC. Its purpose is to be a resource for interacting with NASA data and provide use cases as well as behaviors in ArcGIS Pro and open-source software. 
 
 ## Known Limitations and Expected Behaviors {#kleb}
 :::: {layout="[0.25, 0.25, 0.25, 0.25]"}
@@ -76,7 +76,7 @@ These docs help you use the services provided by the Earthdata Search Platform a
 ::::
 ## Tutorials
 
-To learn from examples, see the Tutorial Page for <!-- [Tutorial Notebooks](/tutorials/index.qmd)--> examples of data services and images. 
+To learn from examples, see the [Tutorial Page](/tutorials/index.qmd) for Jupyter Notebooks on how to use EGIS specific data services and images. 
 
 ## EGIS Content Release Tracker
 
