@@ -3,3 +3,9 @@ title: "Authentication"
 ---
 
 EGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms. 
+
+Services are free to access using ArcGIS Pro, Open Source Software (such as QGIS), or via NASA provided APIs. In order to use or download data users need to create a free account at [NASA Catalog](https://search.earthdata.nasa.gov/) by clicking Log In. 
+
+
+
+### This page is under development. Please check back for updates.

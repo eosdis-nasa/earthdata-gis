@@ -5,3 +5,12 @@ title: "EGIS Limitations"
 ### EGIS Limitations
 
 EGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms.
+
+#### See the following links for specific information:
+* [Active Development](/kleb-project/egis-limitations/active_dev.qmd)
+
+* [Authentication](/kleb-project/egis-limitations/authentication.qmd)
+
+* [Download Limitations](/kleb-project/egis-limitations/no_download.qmd)
+
+* [Service Capabilities](/kleb-project/egis-limitations/service_capability.qmd)

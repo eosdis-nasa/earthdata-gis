@@ -21,3 +21,7 @@ EGIS image services generally do not show temporal slices, even with troubleshoo
 If using the ArcGIS REST Connection import method, most geoprocessing tools fail as the functions are not built to handle services and are therefore looking for a local file to run the analytics on.
 
 Raster processing was successful when using the ImageServer Connector plugin Import method.
+
+
+
+### This page is under development. Please check back for updates.

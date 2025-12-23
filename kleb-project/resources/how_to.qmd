@@ -34,3 +34,7 @@ If the EGIS Portal is Already Registered:
 Click Switch to designate as Active Portal
 
 ![Changing Portal to add .pitemx](/images/Portal_Use_Example.png)
+
+
+
+### This page is under development. Please check back for updates.

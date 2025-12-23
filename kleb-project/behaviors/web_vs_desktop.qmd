@@ -2,6 +2,9 @@
 title: "Development"
 ---
 
-### Web vs Desktop Development
+Web vs Desktop Development
 
 Description: Differences in service behavior, UI rendering, interactivity, and limitations between web applications (e.g., ArcGIS Online, Experience Builder) and desktop clients (e.g., ArcGIS Pro). 
+
+
+### This page is under development. Please check back for updates.

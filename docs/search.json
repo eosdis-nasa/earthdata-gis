@@ -60,7 +60,7 @@
     "href": "kleb-project/tools/third_party.html",
     "title": "Third Party Tools",
     "section": "",
-    "text": "Third Party Tools\nDescription: External tools or APIs that integrate with EGIS services (e.g., Tableau, Leaflet, QGIS).",
+    "text": "Third Party Tools\nDescription: External tools or APIs that integrate with EGIS services (e.g., Tableau, Leaflet, QGIS).\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Tools",
@@ -72,7 +72,7 @@
     "href": "kleb-project/tools/experience_builder.html",
     "title": "Experience Builder",
     "section": "",
-    "text": "Description: A web app builder allowing users to create custom layouts, workflows, and interactive GIS applications.\nExample Application 1: Water Portal * Water Portal - Overview\nExample Application 2: Landslide Viewer Experience * Landslide Viewer Experience - Overview\nExample Application 3: NISAR Mission Observation Plan * NISAR Mission Observation Plan - Overview",
+    "text": "Description: A web app builder allowing users to create custom layouts, workflows, and interactive GIS applications.\nExample Application 1: Water Portal * Water Portal - Overview\nExample Application 2: Landslide Viewer Experience * Landslide Viewer Experience - Overview\nExample Application 3: NISAR Mission Observation Plan * NISAR Mission Observation Plan - Overview\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Tools",
@@ -84,7 +84,7 @@
     "href": "kleb-project/tools/appbuilder.html",
     "title": "Web AppBuilder",
     "section": "",
-    "text": "Web App Builder Examples\nDescription: Legacy app creation tool offering widget-based web applications with configurable maps and tools.",
+    "text": "Web App Builder Examples\nDescription: Legacy app creation tool offering widget-based web applications with configurable maps and tools.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Tools",
@@ -108,7 +108,7 @@
     "href": "kleb-project/services/index.html",
     "title": "Services",
     "section": "",
-    "text": "Service Content",
+    "text": "NASA’s Earthdata Geographic Information System (EGIS) is a set of cloud-native geospatial data services that make NASA Earth science data easier to discover, access, visualize, and analyze in common Geographic Information System (GIS) environments. These services provide GIS-ready imagery and raster/feature data that comply with standards like ArcGIS and Open Geospatial Consortium (OGC), so users can integrate NASA satellite and Earth observation data directly into tools such as ArcGIS, QGIS, and other GIS software.\n\nSee the following links for specific information:\n\nAnnouncements\nFeature Services\nImage Services\nMap Services\nOGC Services",
     "crumbs": [
       "The KLEB project",
       "Services"
@@ -142,7 +142,7 @@
     "href": "kleb-project/resources/external_resources.html",
     "title": "External Resources",
     "section": "",
-    "text": "Description: Useful third-party resources, such as WMS validators, OGC standards, or open GIS datasets. GitHub, Stacked Overflow, etc. Shape\nMap services/layers  Feature Service/layers \nEarthdata GIS Pathfinder\nGetting Started:\n\nImage Services Wiki\nImage Services StoryMap",
+    "text": "Description: Useful third-party resources, such as WMS validators, OGC standards, or open GIS datasets. GitHub, Stacked Overflow, etc. Shape\nMap services/layers  Feature Service/layers \nEarthdata GIS Pathfinder\nGetting Started:\n\nImage Services Wiki\nImage Services StoryMap\n\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Resources",
@@ -154,7 +154,7 @@
     "href": "kleb-project/egis-limitations/service_capability.html",
     "title": "Service Capabilites",
     "section": "",
-    "text": "Image Service Capability Index\n\n\nDescription: Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.\n\nArcGIS ImageServer Connector Plugin in QGIS\nWhile the ArcGIS ImageServer Connector plugin is also available and provides additional functionality with EGIS Image Services, the plugin was built by the Swedish Agency for Marine and Water Management and is no longer actively supported. The last update was in August 2019.\n\n\nTemporal Capabilities in QGIS\nEGIS image services generally do not show temporal slices, even with troubleshooting, no matter which importa methodology used (ArcGIS REST, WMS/WMTS, or plugins). Dynamic temporal control or using the temporal controller do not yield intended results. Some service WMS capabilities may provide workarounds while enhancements are underway.\n\n\nRaster Processing in QGIS\nIf using the ArcGIS REST Connection import method, most geoprocessing tools fail as the functions are not built to handle services and are therefore looking for a local file to run the analytics on.\nRaster processing was successful when using the ImageServer Connector plugin Import method.",
+    "text": "Image Service Capability Index\n\n\nDescription: Scores are based on a subset of NASA Earthdata image services (n=21) that were fully or partially compliant in compatibility areas. Sources include EGIS and non-EGIS image services. Out Of The Box is abridged to OOTB.\n\nArcGIS ImageServer Connector Plugin in QGIS\nWhile the ArcGIS ImageServer Connector plugin is also available and provides additional functionality with EGIS Image Services, the plugin was built by the Swedish Agency for Marine and Water Management and is no longer actively supported. The last update was in August 2019.\n\n\nTemporal Capabilities in QGIS\nEGIS image services generally do not show temporal slices, even with troubleshooting, no matter which importa methodology used (ArcGIS REST, WMS/WMTS, or plugins). Dynamic temporal control or using the temporal controller do not yield intended results. Some service WMS capabilities may provide workarounds while enhancements are underway.\n\n\nRaster Processing in QGIS\nIf using the ArcGIS REST Connection import method, most geoprocessing tools fail as the functions are not built to handle services and are therefore looking for a local file to run the analytics on.\nRaster processing was successful when using the ImageServer Connector plugin Import method.\n\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -166,7 +166,7 @@
     "href": "kleb-project/egis-limitations/index.html",
     "title": "EGIS Limitations",
     "section": "",
-    "text": "EGIS Limitations\nEGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms.",
+    "text": "EGIS Limitations\nEGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms.\n\nSee the following links for specific information:\n\nActive Development\nAuthentication\nDownload Limitations\nService Capabilities",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations"
@@ -177,7 +177,7 @@
     "href": "kleb-project/egis-limitations/active_dev.html",
     "title": "Active Development",
     "section": "",
-    "text": "Description: EGIS is regularly onboarding collections and publishing new services, please visit the Gallery to see the full list of publicly available content. NASA’s Earth observations include ~50,000 collections of over 100 petabytes of data, it is important to note that EGIS does not currently provide geospatial services for the complete repository.",
+    "text": "Description: EGIS is regularly onboarding collections and publishing new services, please visit the NASA Catalog or NASA Portal to see the full list of publicly available content. NASA’s Earth observations include ~50,000 collections of over 100 petabytes of data, it is important to note that EGIS does not currently provide geospatial services for the complete repository.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -189,7 +189,7 @@
     "href": "kleb-project/behaviors/versioning.html",
     "title": "Versioning",
     "section": "",
-    "text": "Version specific behavior\nDescription: Behavior changes, bugs, or enhancements tied to specific versions of Esri software (e.g., ArcGIS Enterprise 11.2 vs. 11.1 or ArcGIS Pro 3.3 vs 3.5.4).",
+    "text": "Version specific behavior\nDescription: Behavior changes, bugs, or enhancements tied to specific versions of Esri software (e.g., ArcGIS Enterprise 11.2 vs. 11.1 or ArcGIS Pro 3.3 vs 3.5.4).\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -201,7 +201,7 @@
     "href": "kleb-project/behaviors/index.html",
     "title": "Product and Platform Behavior",
     "section": "",
-    "text": "Product and Platform Behavior",
+    "text": "Product and Platform Behavior\nThe NASA Earthdata Geographic Information System (EGIS) Data Services platform is expected to provide reliable, standardized, and user-friendly access to NASA Earth science data within common GIS environments. The platform should deliver GIS-ready datasets that integrate seamlessly with tools such as ArcGIS and QGIS, minimizing the need for manual data processing or format conversion. It is expected to support open standards, including OGC services, to ensure interoperability across applications and workflows. The platform should enable efficient data discovery, visualization, and analysis through cloud-based services, allowing users to access large datasets without downloading them locally. Consistent performance, accurate metadata, and timely updates are essential to support scientific research, decision-making, and operational use.\n\nSee the following links for specific information:\n\nEndpoints\nPop Up Behavior\nKnown Software Version Behavior\nWeb vs Desktop Behavior",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior"
@@ -232,7 +232,7 @@
     "href": "index.html#kleb",
     "title": "EGIS Service Information, Tools, and Resources",
     "section": "Known Limitations and Expected Behaviors",
-    "text": "Known Limitations and Expected Behaviors\n\n\n\n\nOverview and Guidance\n\nPurpose of the Documentation Hub\n\n\n\n\n\nEGIS Limitations\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\n\n\n\n\nServices\n\nMap Services\nFeature Services\nImage Services\nOGC Services\nService Announcements\n\n\n\n\n\nProduct and Platform Behavior\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\n\nApplication Integrations & Tools\n\nDashboards\nExperience Builder\nWeb AppBuilder\nArcGIS Online vs Enterprise\nThird Party Tools\n\n\n\n\n\nData Standards & Managements\n\nData Standards & Managements\n\n\n\n\n\nResources\n\nGeneral Documentation Links\nHow-To\nExternal Resources",
+    "text": "Known Limitations and Expected Behaviors\n\n\n\n\nOverview and Guidance\n\nPurpose of the Documentation Hub\n\n\n\n\n\nEGIS Limitations\n\nNo Download\nActive Development\nAuthentication\nImage Service Capability Index\n\n\n\n\n\nServices\n\nMap Services\nFeature Services\nImage Services\nOGC Services\nService Announcements\n\n\n\n\n\nProduct and Platform Behavior\n\nWeb vs Desktop\nPop-Ups\nVersion-Specific Behavior\nOGC vs COTS Endpoints\n\n\n\n\n\n\n\n\n\nApplication Integrations & Tools\n\nDashboards\nExperience Builder\nWeb AppBuilder\nThird Party Tools\n\n\n\n\n\nData Standards & Managements\n\nData Standards & Managements\n\n\n\n\n\nResources\n\nGeneral Documentation Links\nHow-To\nExternal Resources",
     "crumbs": [
       "Welcome"
     ]
@@ -284,7 +284,7 @@
     "href": "kleb-project/behaviors/endpoints.html#ogc-vs-cots-endpoints",
     "title": "API Endpoints",
     "section": "OGC vs COTS Endpoints",
-    "text": "OGC vs COTS Endpoints\n\nWMS\nDescription: Parameters passed in the URL of a WMS request to specify layers, coordinate systems, bounding boxes, image format, etc. (e.g., LAYERS=, SRS=, BBOX=).\n\n\nREST\nDescription: Parameters passed in the URL that represents a resource or functionality in a RESTful API. It acts as the interface where clients send requests to interact with the server. REST endpoints are integral to enabling communication between clients (e.g., web or mobile applications) and servers in a RESTful architecture.",
+    "text": "OGC vs COTS Endpoints\n\nWMS\nDescription: Parameters passed in the URL of a WMS request to specify layers, coordinate systems, bounding boxes, image format, etc. (e.g., LAYERS=, SRS=, BBOX=).\n\n\nREST\nDescription: Parameters passed in the URL that represents a resource or functionality in a RESTful API. It acts as the interface where clients send requests to interact with the server. REST endpoints are integral to enabling communication between clients (e.g., web or mobile applications) and servers in a RESTful architecture.\n\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -296,7 +296,7 @@
     "href": "kleb-project/behaviors/pop_up.html",
     "title": "Pop Up Behavior",
     "section": "",
-    "text": "Description: Interactive UI elements that display attribute data when a user clicks a feature. Behavior and formatting differ across platforms.",
+    "text": "Pop Up Behavior\nDescription: Interactive UI elements that display attribute data when a user clicks a feature. Behavior and formatting differ across platforms.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -308,7 +308,7 @@
     "href": "kleb-project/behaviors/web_vs_desktop.html",
     "title": "Development",
     "section": "",
-    "text": "Web vs Desktop Development\nDescription: Differences in service behavior, UI rendering, interactivity, and limitations between web applications (e.g., ArcGIS Online, Experience Builder) and desktop clients (e.g., ArcGIS Pro).",
+    "text": "Web vs Desktop Development\nDescription: Differences in service behavior, UI rendering, interactivity, and limitations between web applications (e.g., ArcGIS Online, Experience Builder) and desktop clients (e.g., ArcGIS Pro).\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Product and Platform Behavior",
@@ -320,7 +320,7 @@
     "href": "kleb-project/egis-limitations/authentication.html",
     "title": "Authentication",
     "section": "",
-    "text": "EGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms.",
+    "text": "EGIS is currently providing free and open access to our publicly available content; no accounts are required. Sign-in options to EGIS are limited to internal NASA use only and are not available for general use. This limitation will also prevent users from saving or printing web maps, however the services can be used in other clients, tools, and web mapping platforms.\nServices are free to access using ArcGIS Pro, Open Source Software (such as QGIS), or via NASA provided APIs. In order to use or download data users need to create a free account at NASA Catalog by clicking Log In.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -332,7 +332,7 @@
     "href": "kleb-project/egis-limitations/no_download.html",
     "title": "No Download",
     "section": "",
-    "text": "Description: At this time, EGIS services do NOT offer users the ability to download raw data. The ArcGIS Image Services provide Analysis-Ready-Data as a service, allowing users to perform functions and analytics to the underlying data without requiring the download of files. To access to the full NASA Earth observation repository for data download, please visit Earthdata Search.",
+    "text": "Description: At this time, EGIS services do NOT offer users the ability to download raw data. The ArcGIS Image Services provide Analysis-Ready-Data as a service, allowing users to perform functions and analytics to the underlying data without requiring the download of files. To access to the full NASA Earth observation repository for data download, please visit Earthdata Search.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "EGIS Limitations",
@@ -374,7 +374,7 @@
     "href": "kleb-project/resources/how_to.html",
     "title": "How To",
     "section": "",
-    "text": "Instructional Links and Documentation\nDescription: Short instructional videos or documentation covering specific workflows or tools.\n\nNASA EOSDIS Tutorials Github\nEarthdata Tutorials (future: filter or query EGIS or GIS specifically)\n\nEarthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content * Earthdata GIS Resources - YouTube\n\n\nAccess Earthdata Content In ArcGIS Pro\nFrom the NASA Earthdata GIS collection Map click “Open via Pro” to initiate an item download. When you attempt to open the downloaded item (.pitemx) in ArcGIS Pro you will most likely receive an error. This is a known bug with a workaround.\nSpecifically, errors occur when you try to open an item from Portal A while logged into Portal B in ArcGIS Pro.\nAs a workaround, switch the active portal to the content’s home (Portal A). You do not need to have an EGIS Portal account or sign in to set your active portal to EGIS. Open the .pitemx file again.\nPortal URL for EGIS Items: NASA Portal\nHow to Switch Your Active Portal:\nClick the Sign In menu in the upper corner of ArcGIS Pro Click Manage Portals If the EGIS Portal is Not Registered: Click Add Portal Enter the EGIS Portal URL Save Registration If the EGIS Portal is Already Registered: Click Switch to designate as Active Portal\n\n\n\nChanging Portal to add .pitemx",
+    "text": "Instructional Links and Documentation\nDescription: Short instructional videos or documentation covering specific workflows or tools.\n\nNASA EOSDIS Tutorials Github\nEarthdata Tutorials (future: filter or query EGIS or GIS specifically)\n\nEarthdata GIS Resouces YouTube: Video based tutorials and demo utilizing NASA content * Earthdata GIS Resources - YouTube\n\n\nAccess Earthdata Content In ArcGIS Pro\nFrom the NASA Earthdata GIS collection Map click “Open via Pro” to initiate an item download. When you attempt to open the downloaded item (.pitemx) in ArcGIS Pro you will most likely receive an error. This is a known bug with a workaround.\nSpecifically, errors occur when you try to open an item from Portal A while logged into Portal B in ArcGIS Pro.\nAs a workaround, switch the active portal to the content’s home (Portal A). You do not need to have an EGIS Portal account or sign in to set your active portal to EGIS. Open the .pitemx file again.\nPortal URL for EGIS Items: NASA Portal\nHow to Switch Your Active Portal:\nClick the Sign In menu in the upper corner of ArcGIS Pro Click Manage Portals If the EGIS Portal is Not Registered: Click Add Portal Enter the EGIS Portal URL Save Registration If the EGIS Portal is Already Registered: Click Switch to designate as Active Portal\n\n\n\nChanging Portal to add .pitemx\n\n\n\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Resources",
@@ -422,7 +422,7 @@
     "href": "kleb-project/standards/index.html",
     "title": "Standards",
     "section": "",
-    "text": "Data Standards and Management\nDescription: Required metadata elements for datasets and services, such as title, description, spatial extent, and update frequency.",
+    "text": "Data Standards and Management\nDescription: Required metadata elements for datasets and services, such as title, description, spatial extent, and update frequency.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Standards"
@@ -433,7 +433,7 @@
     "href": "kleb-project/tools/dashboards.html",
     "title": "Dashboards",
     "section": "",
-    "text": "Description: Web apps designed for visualizing real-time or aggregated spatial data using charts, indicators, and maps.",
+    "text": "Description: Web apps designed for visualizing real-time or aggregated spatial data using charts, indicators, and maps.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "The KLEB project",
       "Tools",
@@ -445,7 +445,7 @@
     "href": "kleb-project/tools/index.html",
     "title": "Tools",
     "section": "",
-    "text": "Application Integration and Tools",
+    "text": "Application Integration and Tools\nNASA’s EGIS teams focus on enabling seamless connectivity between systems and providing users with practical capabilities to access, process, and use data efficiently. This includes support for standard APIs, data services, and interoperability frameworks that allow applications to integrate with external platforms and workflows. Integration tools are expected to work across environments, reducing the need for custom development and manual data handling.\n\nSee the following links for specific information:\n\nWeb AppBuilder\nDashboards\nExperience Builder\nThird Party Tools",
     "crumbs": [
       "The KLEB project",
       "Tools"
@@ -456,7 +456,7 @@
     "href": "kleb-project/tracker/index.html",
     "title": "Resource Tracker",
     "section": "",
-    "text": "Resource Tracker and Information",
+    "text": "Resource Tracker and Information\nDescription: The intent of the resource tracker is to improve efficiency, accountability, and decision-making by ensuring data and content is visible, well-documented, and easier to manage and integrate into workflows.\n\nThis page is under development. Please check back for updates.",
     "crumbs": [
       "Release Tracker"
     ]

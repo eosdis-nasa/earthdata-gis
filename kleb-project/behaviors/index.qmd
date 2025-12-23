@@ -3,3 +3,14 @@ title: "Product and Platform Behavior"
 ---
 
 Product and Platform Behavior
+
+The NASA Earthdata Geographic Information System (EGIS) Data Services platform is expected to provide reliable, standardized, and user-friendly access to NASA Earth science data within common GIS environments. The platform should deliver GIS-ready datasets that integrate seamlessly with tools such as ArcGIS and QGIS, minimizing the need for manual data processing or format conversion. It is expected to support open standards, including OGC services, to ensure interoperability across applications and workflows. The platform should enable efficient data discovery, visualization, and analysis through cloud-based services, allowing users to access large datasets without downloading them locally. Consistent performance, accurate metadata, and timely updates are essential to support scientific research, decision-making, and operational use.
+
+#### See the following links for specific information:
+* [Endpoints](/kleb-project/behaviors/endpoints.qmd)
+
+* [Pop Up Behavior](/kleb-project/behaviors/pop_up.qmd)
+
+* [Known Software Version Behavior](/kleb-project/behaviors/versioning.qmd)
+
+* [Web vs Desktop Behavior](/kleb-project/behaviors/web_vs_desktop.qmd)

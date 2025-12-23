@@ -20,29 +20,29 @@ These docs help you use the services provided by the Earthdata Search Platform a
 :::{#secondcol}
 ### EGIS Limitations
 
-* [No Download](/kleb-project/egis-limitations/index.html)
-* [Active Development](/kleb-project/egis-limitations/index.html)
-* [Authentication](/kleb-project/egis-limitations/index.html)
-* [Image Service Capability Index](/kleb-project/egis-limitations/index.html)
+* [No Download](/kleb-project/egis-limitations/no_download.qmd)
+* [Active Development](/kleb-project/egis-limitations/active_dev.qmd)
+* [Authentication](/kleb-project/egis-limitations/authentication.qmd)
+* [Image Service Capability Index](/kleb-project/egis-limitations/service_capability.qmd)
 :::
 
 :::{#thirdcol}
 ### Services
 
-* [Map Services](/kleb-project/services/index.html)
-* [Feature Services](/kleb-project/services/index.html)
-* [Image Services](/kleb-project/services/index.html)
-* [OGC Services](/kleb-project/services/index.html)
-* [Service Announcements](/kleb-project/services/index.html)
+* [Map Services](/kleb-project/services/map_services.qmd)
+* [Feature Services](/kleb-project/services/feature_services.qmd)
+* [Image Services](/kleb-project/services/image_services.qmd)
+* [OGC Services](/kleb-project/services/ogc_services.qmd)
+* [Service Announcements](/kleb-project/services/announcements.qmd)
 :::
 
 :::{#fourthcol}
 ### Product and Platform Behavior
 
-* [Web vs Desktop](/kleb-project/behaviors/index.html)
-* [Pop-Ups](/kleb-project/behaviors/index.html)
-* [Version-Specific Behavior](/kleb-project/behaviors/index.html)
-* [OGC vs COTS Endpoints](/kleb-project/behaviors/index.html)
+* [Web vs Desktop](/kleb-project/behaviors/web_vs_desktop.qmd)
+* [Pop-Ups](/kleb-project/behaviors/pop_up.qmd)
+* [Version-Specific Behavior](/kleb-project/behaviors/versioning.qmd)
+* [OGC vs COTS Endpoints](/kleb-project/behaviors/endpoints.qmd)
 :::
 
 ::::
@@ -52,25 +52,24 @@ These docs help you use the services provided by the Earthdata Search Platform a
 :::{#firstcol}
 ### Application Integrations & Tools
 
-* [Dashboards](/kleb-project/tools/index.html)
-* [Experience Builder](/kleb-project/tools/index.html)
-* [Web AppBuilder](/kleb-project/tools/index.html)
-* [ArcGIS Online vs Enterprise](/kleb-project/tools/index.html)
-* [Third Party Tools](/kleb-project/tools/index.html)
+* [Dashboards](/kleb-project/tools/dashboards.qmd)
+* [Experience Builder](/kleb-project/tools/experience_builder.qmd)
+* [Web AppBuilder](/kleb-project/tools/appbuilder.qmd)
+* [Third Party Tools](/kleb-project/tools/third_party.qmd)
 :::
 
 :::{#secondcol}
 ### Data Standards & Managements
 
-* [Data Standards & Managements](/kleb-project/standards/index.html)
+* [Data Standards & Managements](/kleb-project/standards/index.qmd)
 :::
 
 :::{#thirdcol}
 ### Resources
 
 * [General Documentation Links](/kleb-project/resources/index.html)
-* [How-To](/kleb-project/services/index.html)
-* [External Resources](/kleb-project/services/index.html)
+* [How-To](/kleb-project/resources/how_to.qmd)
+* [External Resources](/kleb-project/resources/external_resources.qmd)
 
 :::
 

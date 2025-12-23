@@ -3,3 +3,14 @@ title: "Tools"
 ---
 
 Application Integration and Tools
+
+NASA's EGIS teams focus on enabling seamless connectivity between systems and providing users with practical capabilities to access, process, and use data efficiently. This includes support for standard APIs, data services, and interoperability frameworks that allow applications to integrate with external platforms and workflows. Integration tools are expected to work across environments, reducing the need for custom development and manual data handling.
+
+#### See the following links for specific information:
+* [Web AppBuilder](/kleb-project/tools/appbuilder.qmd)
+
+* [Dashboards](/kleb-project/tools/dashboards.qmd)
+
+* [Experience Builder](/kleb-project/tools/experience_builder.qmd)
+
+* [Third Party Tools](/kleb-project/tools/third_party.qmd)

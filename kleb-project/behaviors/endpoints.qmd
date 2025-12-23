@@ -14,3 +14,6 @@ Description: Parameters passed in the URL of a WMS request to specify layers, co
 
 ### REST 
 Description: Parameters passed in the URL that represents a resource or functionality in a RESTful API. It acts as the interface where clients send requests to interact with the server. REST endpoints are integral to enabling communication between clients (e.g., web or mobile applications) and servers in a RESTful architecture.
+
+
+### This page is under development. Please check back for updates.

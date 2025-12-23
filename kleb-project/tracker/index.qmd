@@ -3,3 +3,8 @@ title: "Resource Tracker"
 ---
 
 Resource Tracker and Information
+
+Description: The intent of the resource tracker is to improve efficiency, accountability, and decision-making by ensuring data and content is visible, well-documented, and easier to manage and integrate into workflows. 
+
+
+### This page is under development. Please check back for updates.
